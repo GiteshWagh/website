@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>index on Gitesh Wagh</title>
+    <link>https://giteshwagh.com/tags/index/</link>
+    <description>Recent content in index on Gitesh Wagh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Gitesh Wagh</copyright><atom:link href="https://giteshwagh.com/tags/index/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Posts</title>
+      <link>https://giteshwagh.com/post/</link>
+      <pubDate>Tue, 22 Aug 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://giteshwagh.com/post/</guid>
+      <description>
+        
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>
