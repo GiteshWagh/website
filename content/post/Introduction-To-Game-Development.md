@@ -7,6 +7,7 @@ Tags = [
      "Gaming",
      "Development"
 ] 
+thumbnail="/images/Game.jpg"
 +++
 # Introduction To Game Development
 <img title="Game Development" alt="Game Development" src="/images/Game.jpg">
