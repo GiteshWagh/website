@@ -1,0 +1,62 @@
+[[main]]
+  name = "Home"
+  url = ""
+  weight = -100
+
+[[main]]
+  name = "Projects"
+  url = "/Projects/"
+  weight = -99
+
+# Submenus are done this way: parent -> identifier
+[[main]]
+  name = "Categories"
+  identifier = "Categories"
+  weight = -77
+[[main]]
+  parent = "Categories"
+  name = "Python"
+  url = "/categories/python/"
+[[main]]
+  parent = "Categories"
+  name = "Web Development"
+  url = "/categories/Web Development/"
+[[main]]
+  parent = "Categories"
+  name = "Python Projects"
+  url = "/categories/python-projects/"
+
+[[main]]
+  name = "About"
+  url = "about/"
+  weight = -66
+
+# social menu links
+
+[[social]]
+  name = "github"
+  type = "social"
+  weight = 1
+  url = "https://github.com/giteshwagh"
+[[social]]
+  name = "YouTube"
+  weight = 2
+  url = "https://www.youtube.com/@TechnicalGamingZone"
+[[social]]
+  name = "rss"
+  weight = 4
+  url = "index.xml"
+
+# other supported social links
+# name = "youtube"
+# url = "https://www.youtube.com/#"
+# name = "facebook"
+# url = "https://facebook.com/#"
+# name = "instagram"
+# url = "https://instagram.com/#"
+# name = "stackoverflow"
+# url = "https://stackoverflow.com/#"
+# name = "gitlab"
+# url = "https://gitlab.com/#"
+# name = "discord"
+# url = "https://discord.gg/#"
