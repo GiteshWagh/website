@@ -7,6 +7,7 @@ tags =  [
   "Free_Video_editor",
   "Video_editing"
 ]
+thumbnail = "/images/KdenliveTutorial1.png"
 +++
 ----------------
 Kdenlive is a free video editor. Today, Video is an important skill for content creators. the video editor is essential in video editing after editing skills. Kdenlive is free and open-source software for video editing. Kdenlive is lightweight and runs on 4GB ram.

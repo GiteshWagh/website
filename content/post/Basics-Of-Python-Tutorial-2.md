@@ -9,6 +9,8 @@ tags = [
   "python",
   "PythonTutorial"
 ]
+thumbnail = "/images/PythonTutorials2.png"
+
 +++
 --------------
 # 1.print()

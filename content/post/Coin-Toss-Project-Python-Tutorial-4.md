@@ -9,6 +9,7 @@ Tags = [
      "Python Prgramming",
      "Python Project"
 ] 
+thumbnail = "/images/CoinTossProject.png"
 +++
 
 **Let’s Create Something Amazing With Python!**

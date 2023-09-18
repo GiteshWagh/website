@@ -9,6 +9,7 @@ tags = [
  "C-Programming",
  "C-Development"
 ]
+thumbnail = "/images/c-sharp.png"
 +++
 ------------------
 Before creating our first program we will create a project.

@@ -8,6 +8,7 @@ Tags = [
      "C-Prgramming",
      "C-Development"
 ] 
+thumbnail = "/images/c-sharp.png"
 +++
 --------------------
 C#(C sharp) is a programming language developed by Microsoft. C# runs on .NET Framework. 

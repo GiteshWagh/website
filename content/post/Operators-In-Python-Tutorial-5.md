@@ -10,6 +10,7 @@ tags = [
  "python",
  "PythonTutorials"
 ]
+thumbnail = "/images/PythonTutorial5.png"
 +++
 ****
 # What Are Operators In Python? 

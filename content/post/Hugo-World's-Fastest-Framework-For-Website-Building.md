@@ -6,7 +6,9 @@ categories = "Web Development"
 tags = [ "Hugo", 
     "gohugo",  
     "HugoTutorial", 
-    "Website"]  
+    "Website"
+]
+thumbnail = "/images/Hugo.png"  
 +++
 
 Hey Guys👋,                                                                            

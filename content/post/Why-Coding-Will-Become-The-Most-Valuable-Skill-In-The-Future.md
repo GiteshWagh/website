@@ -8,6 +8,7 @@ tags =  [
   "Latest",
   "Coding_in_future"
 ]
+thumbnail = "/images/codes.jpg"
 +++ 
 -----------
 <img title="coding" alt="coding" src="/images/codes.jpg">

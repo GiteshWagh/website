@@ -9,6 +9,7 @@ tags = [
   "python",
   "PythonTutorial"
 ]
+thumbnail = "/images/PythonTutorial6.png"
 +++
 
 # What is If-Else statement ?

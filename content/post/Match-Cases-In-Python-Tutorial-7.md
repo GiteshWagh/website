@@ -9,6 +9,7 @@ tags = [
   "python",
   "PythonTutorial"
 ]
+thumbnail = "/images/PythonTutorial7.png"
 +++
 
 
