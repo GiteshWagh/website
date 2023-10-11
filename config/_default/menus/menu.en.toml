@@ -6,30 +6,24 @@
 [[main]]
   name = "Projects"
   url = "/Projects/"
-  weight = -99
+  weight = -98
 
-# Submenus are done this way: parent -> identifier
 [[main]]
-  name = "Categories"
-  identifier = "Categories"
-  weight = -77
-[[main]]
-  parent = "Categories"
   name = "Python"
   url = "/categories/python/"
+  weight = -99
+
 [[main]]
-  parent = "Categories"
   name = "Web Development"
   url = "/categories/Web Development/"
-[[main]]
-  parent = "Categories"
-  name = "Python Projects"
-  url = "/categories/python-projects/"
+  weight = -97
+
+# Submenus are done this way: parent -> identifier
 
 [[main]]
   name = "About"
   url = "about/"
-  weight = -66
+  weight = -96
 
 # social menu links
 

@@ -1,5 +1,5 @@
 +++
-title = "💻Project 2 : Secure Profile Management System"
+title = "💻Project 2 : Secure Profile Management System In Python"
 authors= "Gitesh Wagh"
 date = "2023-08-21"
 categories = "Python Projects"
