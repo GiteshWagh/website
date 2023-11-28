@@ -21,10 +21,10 @@ This program will allow the computer to randomly choose one of two outcomes and
 display it.     
 
 ### Concepts Used In This Project
-**(1) Variables**  
-**(2) Datatypes**  
-**(3) Random Module**  
-**(4) Print Function**  
+[(1) Variables](https://giteshwagh.com/post/variables-and-datatypes-python-tutorial-3/)  
+[(2) Datatypes](https://giteshwagh.com/post/variables-and-datatypes-python-tutorial-3/)  
+(3) Random Module   
+[(4) Print Function](https://giteshwagh.com/post/basics-of-python-tutorial-2/)  
 
 *****
 

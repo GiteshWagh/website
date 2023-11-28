@@ -43,7 +43,13 @@ print(x)
 print("Hello World")
 
 # Output : Hello World
-```
+````
+****
+Related Blogs:  
+[Installation and Setup of Python and VS Codium - Python Tutorials For Beginners #1](https://giteshwagh.com/post/setup-of-python-tutorial-1/)  
+[Why Coding Will Become The Most Valuable Skill In The Future?](https://giteshwagh.com/post/why-coding-will-become-the-most-valuable-skill-in-the-future/) 
+****
+
 ## Watch Video Tutorials On Youtube
 
 {{< youtube MSReO9U-PTA >}}

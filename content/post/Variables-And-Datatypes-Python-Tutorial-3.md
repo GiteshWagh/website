@@ -11,7 +11,7 @@ tags = [
 ]
 thumbnail = "/images/PythonTutorials3.png"
 +++
-------------------
+****
 # Variables
 ```python
 Variabl1e1 = 24565876575678
@@ -47,7 +47,7 @@ Here, We got the same output with two different methods of line code. However, U
 
 We use variables many times instead of writing the value. Because, We easily change the value of a variable in the whole code. We will quickly change the value of a variable in the code if any issue is found. 
 
-*****
+****
 
 # Rules For creating Variables
 
@@ -56,7 +56,7 @@ We use variables many times instead of writing the value. Because, We easily cha
 **(3) The name only contains alphanumerics and underscores.**  
 **(4) Names cannot start with a number.**  
 
-***********
+****
 
 # Datatype
 ```python
