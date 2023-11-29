@@ -22,18 +22,18 @@ Let's Learn Something About World's fastest Framework For Website Development Hu
 
 
 ### Hugo Features:-
-```
-1. Zero cost for building a website.
-2. Free hosting.
-3. Fast speed( At <1ms per page ).
-4. No coding skills are required.
-5. Secure and responsive site.
-6. Amazing themes and template support.
-7. Image processing.
-8. Support Go, HTML, CSS, etc. programming languages for new features.
-9. Support Github, Gitlab, Netlify, etc.
-10. Amamzing content management.
-```
+
+**1. Zero cost for building a website.**  
+**2. Free hosting.**  
+**3. Fast speed( At <1ms per page ).**  
+**4. No coding skills are required.**  
+**5. Secure and responsive site.**   
+**6. Amazing themes and template support.**   
+**7. Image processing.**  
+**8. Support Go, HTML, CSS, etc. programming languages for new features.**  
+**9. Support Github, Gitlab, Netlify, etc.**  
+**10. Amamzing content management.**  
+
 
 ************************
 # How To Download Hugo?
