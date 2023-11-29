@@ -16,17 +16,6 @@ author = "Gitesh Wagh"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'
 description = "Amazing Tech Blogs"
 keywords = "blog,developer,personal"
-info = ["""Hey, I’m Gitesh. I am YouTuber. I am interested in Coding, Programming, Gaming, etc., so I teach Game Development, Programming, and Software on YouTube.
-
-About giteshwagh.com :- 
-I upload Game Development, Programming, and Software related amazing blogs on this site. I spread knowledge about game development and I will tell you about my experience with game development. Bookmark my site for amazing blogs every weekend.
-
-About my YouTube channel :- 
-My YouTube channel name is “Technical Gaming Zone”. I upload content about game development and technology related to games. Thank you so much…
-
-
-*********
-⬇              Follow Me On Social Media ⬇            """]
 
 avatarURL = "images/Boki-avatar.jpg"
 #gravatar = "john.doe@example.com"

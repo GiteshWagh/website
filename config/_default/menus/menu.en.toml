@@ -23,7 +23,13 @@
 [[main]]
   name = "About"
   url = "about/"
+  weight = -95
+
+[[main]]
+  name = "Sitemap"
+  url = "/sitemap/"
   weight = -96
+
 
 # social menu links
 
