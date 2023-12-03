@@ -1,7 +1,7 @@
 +++
 authors = "Gitesh Wagh"
 title = "Why Kdenlive Is The Best Free Video Editor?"
-date = "2022-03-20"
+date = "2022-02-20"
 tags =  [
   "Kdenlive",
   "Free_Video_editor",
@@ -10,7 +10,7 @@ tags =  [
 thumbnail = "/images/KdenliveTutorial1.png"
 +++
 ----------------
-Kdenlive is a free video editor. Today, Video is an important skill for content creators. the video editor is essential in video editing after editing skills. Kdenlive is free and open-source software for video editing. Kdenlive is lightweight and runs on 4GB ram.
+Kdenlive is a free video editor. Today, Video editing is an important skill for content creators. The video editor is essential tool for video editing after editing skills. Kdenlive is free and open-source software for video editing. Kdenlive is lightweight and runs on 4GB ram only.
 
 Specification for Kdenlive:
 1.Operating System = Windows 7 or newer
@@ -37,5 +37,6 @@ Best feature :
 8. Timeline preview feature is available.
 # All information about Kdenlive is taken from the official site of Kdenlive. Check for more... #
 
-Official site of Kdenlive : https://kdenlive.org/en/
+[Official site of Kdenlive](https://kdenlive.org/en/)
+
 **********
