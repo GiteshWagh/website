@@ -15,19 +15,6 @@ featureImage = "/images/codes.jpg"
 +++
 
 -----------
-
-# Why Coding Will Become The Most Valuable Skill In The Future?
-
-
-
-## Answered Questions In This Blog:    
-**What is coding**   
-**How to learn coding?**  
-**What is programming languages?**  
-**How to start coding?**  
-**Which is best programming languages for beginners?**   
-**Which are tools for programming?**  
-**What is IDE?**  
   
 ## What Is Coding?
 Basically, Coding way to interact and assigning task to a computer.  
@@ -62,7 +49,6 @@ valuable skill in 2023.
 
 * **YouTube, giteshwagh.com, etc. are great platforms for free-of-cost learning coding.**
 
----
 
 ## Top 10 Programming Languages
 
@@ -98,7 +84,7 @@ Use: Known for its simplicity and readability, Ruby is used for **web developmen
 * Go (Golang):  
 Use: **Developed by Google**, Go is known for its simplicity and efficiency. Commonly used for **system programming**, **cloud computing**, and **building scalable** and **reliable applications**.
 
----
+
 
 ## How To learn Coding?
 
@@ -109,13 +95,13 @@ Use: **Developed by Google**, Go is known for its simplicity and efficiency. Com
 
 **congratulations! Your coding journey is started.**
 
----
+
 
 ## Tools For Coding
 **integrated development environment (IDE)** is one of the important and useful 
 tool in coding. IDE is a software who help us while writting code.
 
----
+
 
 ### These Are Some Popular IDE   
 #### 1. Visual Studio Code (VSCode):  
@@ -158,9 +144,9 @@ tool in coding. IDE is a software who help us while writting code.
 * Language Support: Virtually all programming languages  
 * Features: Vim and Emacs are powerful, highly customizable text editors that are popular among advanced users and developers who prefer keyboard-driven workflows.
 
----
+
 ## Conclusion:   
-Coding is valuable skill which **helps you to earn millions of dollars**. Free online cources are available who teach you **How To Code?**
+Coding is valuable skill which **helps you to earn millions of dollars**. Free online cources are available who teach you **How To Code.**
 
 ---
 
