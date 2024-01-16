@@ -21,7 +21,7 @@ Let's Learn Everything About Hugo: The World's fastest Framework For Website Dev
 
 ## What Is Hugo?                                                                      
 
-Hugo is the world's fastest framework for website building. Hugo is a fast and modern static site generator. Hugo is based on the Go programming language. It supports multiple free hosting platforms like Github, Gitlab, Netlify, etc. Hugo provides us with various templates for web designing at zero cost. Hugo is one of the popular frameworks for building a website in a few minutes. Hugo uses Go, HTML, CSS, etc. for its rich content.
+Hugo is the world's fastest framework for website building. Hugo is a fast and modern static site generator. Hugo is based on the Go programming language. It supports multiple **free hosting** platforms like **Github, Gitlab, Netlify, etc.** Hugo provides us with various templates for web designing at zero cost. Hugo is one of the popular frameworks for building a website in a few minutes. Hugo uses **Go, HTML, CSS, etc.** for its rich content.
 
 # Hugo Features
 
@@ -194,9 +194,11 @@ docker pull klakegg/hugo
 
 ## Required Elements
 
-1. [Install Hugo (extended edition, v0.112.0 or later)](https://gohugo.io/installation/)
+1. **[Install Hugo (extended edition, v0.112.0 or later)](https://gohugo.io/installation/)**
 
-2. [Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
+2. **[Install Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)**
+
+3. **[Learn Markdown Syntax](https://giteshwagh.com/post/markdown-syntax-complete-tutorial/)**
 
 ## Important Commands
 

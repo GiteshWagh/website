@@ -20,7 +20,7 @@ It's widely used for creating documentation, README files, Blogs, and other
 types of content on the web. In this tutorial, we'll cover the basic syntax 
 of Markdown in simple words.
 
----
+
 
 ## 1. Headings 
 
@@ -32,15 +32,18 @@ To create headings, use hash symbols (#). Use hash as per your heading level.
 ## Heading 2
 
 ### Heading 3
+
+#### Heading 4
+ 
+##### Heading 5
+
+###### Heading 6
 ```
 
 **Output -**
 
- # Heading 1
- ## Heading 2
- ### Heading 3
+<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/Markdown Syntax.jpg">
 
----
 
 ## 2. Text Formatting
 
@@ -71,7 +74,7 @@ _Italic Text_
 Italic Text 
 Italic Text 
 
----
+
 
 ## 3. Lists
 
@@ -89,7 +92,7 @@ Unordered Lists: Use asterisks, plus signs, or hyphens.
 + Item 2
 - Item 3
 
----
+
 
 List with ordered elements: Use numbers for numbering element of list.
 
@@ -105,7 +108,7 @@ List with ordered elements: Use numbers for numbering element of list.
 2. Item 2
 3. Item 3
 
----
+
 
 ## 4. Links
 
@@ -117,24 +120,34 @@ Create links by enclosing the link text in square brackets and the URL in parent
 
 ```
 
+
 Output - 
 
 [Gitesh Wagh](https://www.giteshwagh.com)
 
----
+
 
 ## 5. Images
 
 Insert images similarly to links, but with an exclamation mark in front.
 
-```Markdown
+````Markdown
 ![Alt Text For Image](image.png)
-```
+````
+
+  **OR**
+
+````Markdown
+<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/codes.jpg">
+````
 
 Output - 
 ![Alt Text For Image](codes.jpg)
 
----
+
+<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/codes.jpg">
+
+
 
 ## 6. Blockquotes
 
@@ -147,7 +160,7 @@ Use the greater-than symbol for blockquotes.
 Output - 
 > This is a blockquote.
 
----
+
 
 ## 7. Code
 
@@ -161,7 +174,7 @@ Inline code is wrapped in backticks.
 
 Output - 
 
-```c
+```Markdown 
 inline code
 ``` 
 
@@ -175,14 +188,14 @@ def example():
 print("Hello, Markdown!")
 ```
 
----
+
 
 ## 8. Horizontal Rules
 
 Insert a horizontal rule with three hyphens, underscores, or asterisks.
 
 ```Markdown
----
+
 ```
 
 ## 9. Escaping Characters
@@ -190,31 +203,30 @@ Insert a horizontal rule with three hyphens, underscores, or asterisks.
 To display special characters, use a backslash.
 
 ```Markdown
-\*literal asterisks\*
+\*Using Special Character\*
 ```
 
 Output - 
-\*literal asterisks\*
+\*Using Special Character\*
 
----
+
 
 ## 10. Tables
 
 Create tables using pipes and hyphens.
 
 ```Markdown
-| Header 1 | Header 2 |
-| -------- | -------- |
-| Content 1| Content 2|
+| Heading 1 | Heading 2 |
+| --------- | --------- |
+| Content 1 | Content 2 |
 
 ```
 
 Output -   
-| Header 1 | Header 2 |
-| -------- | -------- |
-| Content 1| Content 2|
+| Heading 1 | Heading 2 |
+| --------- | --------- |
+| Content 1 | Content 2 |
 
----
 
 ## Recommended Blogs -  
 1.[Hugo : World's Fastest Framework For Website Building 🔥](https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/)
@@ -224,4 +236,3 @@ Output -
 3.[Why Coding Will Become The Most Valuable Skill In The Future?](https://giteshwagh.com/post/why-coding-will-become-the-most-valuable-skill-in-the-future/)
 
 
----
