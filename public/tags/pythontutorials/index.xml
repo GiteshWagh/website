@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PythonTutorials on Gitesh Wagh</title>
+    <link>https://giteshwagh.com/tags/pythontutorials/</link>
+    <description>Recent content in PythonTutorials on Gitesh Wagh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Gitesh Wagh</copyright>
+    <lastBuildDate>Sun, 18 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://giteshwagh.com/tags/pythontutorials/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Operators In Python - Python Tutorials For Beginners #5</title>
+      <link>https://giteshwagh.com/post/operators-in-python-tutorial-5/</link>
+      <pubDate>Sun, 18 Jun 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://giteshwagh.com/post/operators-in-python-tutorial-5/</guid>
+      <description>
+        
+          
+            What Are Operators In Python? Operators are a symbol or small word which is useful to perform operations in Python.  Type Of Operators (1) Conditional Operators (2) Logical Operators (3) Identity Operators (4) Arithmetic Operators (5) Membership Operators (6) Assignment Operators (7) Bitwise Operator  Conditional / Comparison Operators In Python 1Conditional / Comparison Operators In Python 2 3&amp;lt; Greater Than symbol 4&amp;gt; Smaller Than symbol 5&amp;lt;= Equal To And Greater Than 6&amp;gt;= Equal To And Smaller Than 7== Equal To 8!
+          
+          
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Variables And DataTypes - Python Tutorials For Beginners #3</title>
+      <link>https://giteshwagh.com/post/variables-and-datatypes-python-tutorial-3/</link>
+      <pubDate>Mon, 08 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://giteshwagh.com/post/variables-and-datatypes-python-tutorial-3/</guid>
+      <description>
+        
+          
+            Variables 1Variabl1e1 = 24565876575678 2x = input() 3print(x) 4print(Variabl1e1) Here I created a variable called &amp;quot;Variable1&amp;quot;. Variables are use for storing data. Variables are like containers, they contain values.** First of all, write the name of the variable, Use the = sign, and assign the value. This is the syntax to create variables in Python programming.
+These are some example variables.
+1a = 12345 2b = &amp;#34;abc123&amp;#34; 3c = 12.
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MarkdownSyntax on Gitesh Wagh</title>
+    <link>https://giteshwagh.com/tags/markdownsyntax/</link>
+    <description>Recent content in MarkdownSyntax on Gitesh Wagh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Gitesh Wagh</copyright>
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://giteshwagh.com/tags/markdownsyntax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown Syntax - Complete Tutorial</title>
+      <link>https://giteshwagh.com/post/markdown-syntax-complete-tutorial/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://giteshwagh.com/post/markdown-syntax-complete-tutorial/</guid>
+      <description>
+        
+          
+            Complete Tutorial Of Markdown Syntax Markdown is a method of writting and representing data in a beautiful way. It&#39;s widely used for creating documentation, README files, Blogs, and other types of content on the web. In this tutorial, we&#39;ll cover the basic syntax of Markdown in simple words.
+1. Headings To create headings, use hash symbols (#). Use hash as per your heading level.
+1# Heading 1 2 3## Heading 2 4 5### Heading 3 6 7#### Heading 4 8 9##### Heading 5 10 11###### Heading 6 Output -
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

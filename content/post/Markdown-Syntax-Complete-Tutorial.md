@@ -40,7 +40,7 @@ To create headings, use hash symbols (#). Use hash as per your heading level.
 ###### Heading 6
 ```
 
-**Output -**
+**Output-**
 
 <img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/Markdown Syntax.jpg">
 
@@ -228,11 +228,11 @@ Output -
 | Content 1 | Content 2 |
 
 
-## Recommended Blogs -  
-1.[Hugo : World's Fastest Framework For Website Building 🔥](https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/)
+## Recommended Content
+1. [Hugo : World's Fastest Framework For Website Building 🔥](https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/)
 
-2.[Why Kdenlive Is The Best Free Video Editor?](https://giteshwagh.com/post/why-kdenlive-is-the-best-free-video-editor/)
+2. [Why Kdenlive Is The Best Free Video Editor?](https://giteshwagh.com/post/why-kdenlive-is-the-best-free-video-editor/)
 
-3.[Why Coding Will Become The Most Valuable Skill In The Future?](https://giteshwagh.com/post/why-coding-will-become-the-most-valuable-skill-in-the-future/)
+3. [Why Coding Will Become The Most Valuable Skill In The Future?](https://giteshwagh.com/post/why-coding-will-become-the-most-valuable-skill-in-the-future/)
 
 
