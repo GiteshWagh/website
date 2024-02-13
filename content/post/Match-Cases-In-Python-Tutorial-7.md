@@ -11,6 +11,7 @@ tags = [
     "Match Cases In Python",
     "Match Cases"
 ]
+
 description = "Match Cases is a method or way for writing conditions in Python programming. In Python, Match case and switch case are not the same. They are to each other similar."
 +++
 
