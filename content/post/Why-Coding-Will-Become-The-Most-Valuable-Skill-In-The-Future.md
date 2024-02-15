@@ -52,38 +52,37 @@ valuable skill in 2023.
 
 ## Top 10 Programming Languages
 
-* JavaScript:  
+### 1. JavaScript 
 Use: **Front-end web development** for creating interactive and dynamic user interfaces. Also used on the server side **(Node.js)** for building scalable network applications.
 
-* Python:  
+### 2. Python 
 Use: Versatile language used for **web development, data analysis, artificial intelligence, machine learning, automation, scientific computing, and more.**
 
-> Python Programming Language is highly recommended for beginners. 
+**Note : Python Programming Language is highly recommended for beginners.** 
 
-* Java:  
+### 3. Java 
 Use: Enterprise-level **applications**, **mobile applications (Android)**, **web development**, and **large-scale systems**.
 
-* C#:  
+### 4. C#
 Use: **Developed by Microsoft**, C# is commonly used for **building Windows applications**, **web applications (with ASP.NET)**, and **game development using Unity**.
 
-* C++:  
+### 5. C++
 Use: General-purpose **programming**, **system/application development**, **game development**, and **performance-critical applications**.
 
-* PHP:  
+### 6. PHP 
 Use: **Server-side scripting** for **web development**, often used with databases like **MySQL**. Powers many dynamic websites and content management systems (e.g., **WordPress**).
 
-* Swift:  
+### 7. Swift  
 Use: **Developed by Apple**, Swift is primarily used for **iOS** and **macOS app development**. Known for its performance and **safety** features.
 
-* TypeScript:  
+### 8. TypeScript 
 Use: **Superset of JavaScript** that adds static typing. Commonly used for **large-scale web applications** to enhance code maintainability and catch errors early.
 
-* Ruby:  
+### 9. Ruby
 Use: Known for its simplicity and readability, Ruby is used for **web development**, particularly with the Ruby on **Rails framework**.
 
-* Go (Golang):  
+### 10. Go(Golang)
 Use: **Developed by Google**, Go is known for its simplicity and efficiency. Commonly used for **system programming**, **cloud computing**, and **building scalable** and **reliable applications**.
-
 
 
 ## How To learn Coding?
@@ -95,64 +94,54 @@ Use: **Developed by Google**, Go is known for its simplicity and efficiency. Com
 
 **congratulations! Your coding journey is started.**
 
-
-
 ## Tools For Coding
 **integrated development environment (IDE)** is one of the important and useful 
 tool in coding. IDE is a software who help us while writting code.
 
-
-
-### These Are Some Popular IDE   
-#### 1. Visual Studio Code (VSCode):  
+## Popular IDE   
+### 1. Visual Studio Code (VSCode):  
 * Language Support: JavaScript, TypeScript, Python, Java, C#, and many more.  
 * Features: Lightweight, powerful, and supports a wide range of extensions. It's highly customizable and has excellent Git integration.
 
-#### 2. PyCharm:  
+### 2. PyCharm:  
 * Language Support: Python  
 * Features: Developed by JetBrains, PyCharm is known for its excellent Python support, intelligent code completion, and advanced debugging features.
 
-#### 3. IntelliJ IDEA:  
+### 3. IntelliJ IDEA:  
 * Language Support: Java, Kotlin   
 * Features: Another JetBrains IDE, IntelliJ IDEA offers strong support for Java and Kotlin, with features like smart code completion, refactoring tools, and a powerful debugger.
 
-#### 4. Eclipse:  
+### 4. Eclipse:  
 * Language Support: Java (with plugins available for other languages)    
 * Features: Eclipse is a widely used IDE for Java development. It's extensible, allowing you to add plugins for other languages and frameworks.
 
-#### 5. Atom:  
+### 5. Atom:  
 * Language Support: JavaScript, HTML, CSS, Python, and more.  
 * Features: Atom is an open-source, hackable text editor developed by GitHub. It's customizable and has a large community creating packages and themes.
 
-#### 6. Sublime Text:  
+### 6. Sublime Text:  
 * Language Support: Various languages with plugins.  
 * Features: Sublime Text is a lightweight and fast text editor with a minimalist interface. It supports multiple selections, a powerful search and replace engine, and has a vibrant package ecosystem.
 
-#### 7. Xcode:  
+### 7. Xcode:  
 * Language Support: Swift, Objective-C (macOS and iOS development)  
 * Features: Xcode is the official IDE for Apple platforms. It includes a code editor, interface builder, and performance instruments for macOS, iOS, watchOS, and tvOS development.
 
-#### 8. NetBeans:  
+### 8. NetBeans:  
 * Language Support: Java, HTML5, PHP, C++  
 * Features: NetBeans is a free, open-source IDE that supports multiple languages. It offers smart code completion, integrated debugger, and a variety of plugins.
 
-#### 9. Android Studio:  
+### 9. Android Studio:  
 * Language Support: Kotlin, Java (Android development)  
 * Features: Android Studio is the official IDE for Android app development. It provides tools for designing UIs, debugging, and performance profiling.
 
-#### 10. Vim/Emacs:  
+### 10. Vim/Emacs:  
 * Language Support: Virtually all programming languages  
 * Features: Vim and Emacs are powerful, highly customizable text editors that are popular among advanced users and developers who prefer keyboard-driven workflows.
-
 
 ## Conclusion:   
 Coding is valuable skill which **helps you to earn millions of dollars**. Free online cources are available who teach you **How To Code.**
 
----
-
-#### Recommended Content- 
-
+## Recommended Content 
 [Click Here To Learn Python.](https://giteshwagh.com/categories/python/)   
-[Click Here To Learn Web Development.](https://giteshwagh.com/categories/web-development/)   
-
----
+[Click Here To Learn Web Development.](https://giteshwagh.com/categories/web-development/)    
