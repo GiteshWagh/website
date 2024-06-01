@@ -24,7 +24,7 @@
 <meta name="description" content="Loops In Python Loops are used to execute a specific code many times instead of writing code again and again.
 Types of Loops: 1. For Loops
 2. While Loops
- For …" />
+For …" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:creator" content="">
 <meta name="twitter:title" content=" For Loops In Python- Python Tutorials For Beginners #9" />
@@ -34,7 +34,7 @@ Types of Loops: 1. For Loops
 <meta property="og:description" content="Loops In Python Loops are used to execute a specific code many times instead of writing code again and again.
 Types of Loops: 1. For Loops
 2. While Loops
- For …" />
+For …" />
 <meta property="og:image" content="https://giteshwagh.com/images/PythonTutorial9.png" />
   <meta name="keywords" content="98,108,111,103,44,100,101,118,101,108,111,112,101,114,44,112,101,114,115,111,110,97,108" />
 
@@ -203,78 +203,75 @@ Types of Loops: 1. For Loops
 <p><strong>For Loop</strong> is more used than <strong>While Loops.</strong> For Loops are used for <strong>different purposes</strong> in <strong>different ways.</strong></p>
 <hr>
 <p>In this example, I used <strong>For Loops</strong> along with the <strong>if-else statement</strong>. Here, <strong>i</strong> is <strong>List</strong> and <strong>k</strong> is a <strong>variable</strong> containing elements of list. <strong>k</strong> is used to access elements in the List. I assign conditions also with elements of the List.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln"> 1</span><span class="n">i</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fish&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span>
-<span class="ln"> 2</span>
-<span class="ln"> 3</span><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
-<span class="ln"> 4</span>    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
-<span class="ln"> 5</span>    <span class="k">if</span> <span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="s2">&#34;dog&#34;</span><span class="p">):</span>
-<span class="ln"> 6</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;dogs are so loyal animals&#34;</span><span class="p">)</span>
-<span class="ln"> 7</span>
-<span class="ln"> 8</span>    <span class="k">elif</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;cat&#39;</span><span class="p">):</span>
-<span class="ln"> 9</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;cats are so cute.&#34;</span><span class="p">)</span>
-<span class="ln">10</span>
-<span class="ln">11</span>    <span class="k">elif</span> <span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="s1">&#39;fish&#39;</span><span class="p">):</span>
-<span class="ln">12</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;fish is live in the water&#34;</span><span class="p">)</span>
-<span class="ln">13</span>    <span class="k">else</span><span class="p">:</span>
-<span class="ln">14</span>        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s2">&#34;is are nice animal&#34;</span><span class="p">)</span>
-<span class="ln">15</span>
-<span class="ln">16</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
-<span class="ln">17</span>            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># Output:
-<span class="ln">2</span>
-<span class="ln">3</span>fish
-<span class="ln">4</span>fish is live in the water
-<span class="ln">5</span>cat
-<span class="ln">6</span>cats are so cute.
-<span class="ln">7</span>dog
-<span class="ln">8</span>dogs are so loyal animals
-<span class="ln">9</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="n">i</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;fish&#39;</span><span class="p">,</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;dog&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">i</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="s2">&#34;dog&#34;</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;dogs are so loyal animals&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">    <span class="k">elif</span> <span class="p">(</span><span class="n">k</span> <span class="o">==</span> <span class="s1">&#39;cat&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;cats are so cute.&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">10</span><span class="cl">
+</span></span><span class="line"><span class="ln">11</span><span class="cl">    <span class="k">elif</span> <span class="p">(</span><span class="n">k</span><span class="o">==</span><span class="s1">&#39;fish&#39;</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">12</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;fish is live in the water&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">13</span><span class="cl">    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">14</span><span class="cl">        <span class="nb">print</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="s2">&#34;is are nice animal&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">15</span><span class="cl">
+</span></span><span class="line"><span class="ln">16</span><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">17</span><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"># Output:
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">fish
+</span></span><span class="line"><span class="ln">4</span><span class="cl">fish is live in the water
+</span></span><span class="line"><span class="ln">5</span><span class="cl">cat
+</span></span><span class="line"><span class="ln">6</span><span class="cl">cats are so cute.
+</span></span><span class="line"><span class="ln">7</span><span class="cl">dog
+</span></span><span class="line"><span class="ln">8</span><span class="cl">dogs are so loyal animals
+</span></span></code></pre></div><hr>
 <h1 id="range">range()</h1>
 <p>This code is used to print the numbers as per given limit. Here, I gave a <strong>limit</strong> of 0 to 20 with the help of range function. <strong>Note that, The output will start from 1 and ends on 19.</strong> Here, the variable <strong>i</strong> contains numbers <strong>1 to 19.</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
-<span class="ln">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln"> 1</span># Output:
-<span class="ln"> 2</span>
-<span class="ln"> 3</span>0
-<span class="ln"> 4</span>1
-<span class="ln"> 5</span>2
-<span class="ln"> 6</span>3
-<span class="ln"> 7</span>4
-<span class="ln"> 8</span>5
-<span class="ln"> 9</span>6
-<span class="ln">10</span>7
-<span class="ln">11</span>8
-<span class="ln">12</span>9
-<span class="ln">13</span>10
-<span class="ln">14</span>11
-<span class="ln">15</span>12
-<span class="ln">16</span>13
-<span class="ln">17</span>14
-<span class="ln">18</span>15
-<span class="ln">19</span>16
-<span class="ln">20</span>17
-<span class="ln">21</span>18
-<span class="ln">22</span>19
-<span class="ln">23</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln"> 1</span><span class="cl"># Output:
+</span></span><span class="line"><span class="ln"> 2</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 3</span><span class="cl">0
+</span></span><span class="line"><span class="ln"> 4</span><span class="cl">1
+</span></span><span class="line"><span class="ln"> 5</span><span class="cl">2
+</span></span><span class="line"><span class="ln"> 6</span><span class="cl">3
+</span></span><span class="line"><span class="ln"> 7</span><span class="cl">4
+</span></span><span class="line"><span class="ln"> 8</span><span class="cl">5
+</span></span><span class="line"><span class="ln"> 9</span><span class="cl">6
+</span></span><span class="line"><span class="ln">10</span><span class="cl">7
+</span></span><span class="line"><span class="ln">11</span><span class="cl">8
+</span></span><span class="line"><span class="ln">12</span><span class="cl">9
+</span></span><span class="line"><span class="ln">13</span><span class="cl">10
+</span></span><span class="line"><span class="ln">14</span><span class="cl">11
+</span></span><span class="line"><span class="ln">15</span><span class="cl">12
+</span></span><span class="line"><span class="ln">16</span><span class="cl">13
+</span></span><span class="line"><span class="ln">17</span><span class="cl">14
+</span></span><span class="line"><span class="ln">18</span><span class="cl">15
+</span></span><span class="line"><span class="ln">19</span><span class="cl">16
+</span></span><span class="line"><span class="ln">20</span><span class="cl">17
+</span></span><span class="line"><span class="ln">21</span><span class="cl">18
+</span></span><span class="line"><span class="ln">22</span><span class="cl">19
+</span></span></code></pre></div><hr>
 <p>In this example, the variable <strong>x</strong> contains <strong>letters</strong> of the string <strong>&quot;Apple&quot;</strong>.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s2">&#34;Apple&#34;</span><span class="p">:</span>
-<span class="ln">2</span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-</code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="ln">1</span># Output:
-<span class="ln">2</span>
-<span class="ln">3</span>A
-<span class="ln">4</span>p
-<span class="ln">5</span>p
-<span class="ln">6</span>l
-<span class="ln">7</span>e
-<span class="ln">8</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s2">&#34;Apple&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="ln">1</span><span class="cl"># Output:
+</span></span><span class="line"><span class="ln">2</span><span class="cl">
+</span></span><span class="line"><span class="ln">3</span><span class="cl">A
+</span></span><span class="line"><span class="ln">4</span><span class="cl">p
+</span></span><span class="line"><span class="ln">5</span><span class="cl">p
+</span></span><span class="line"><span class="ln">6</span><span class="cl">l
+</span></span><span class="line"><span class="ln">7</span><span class="cl">e
+</span></span></code></pre></div><hr>
 <h1 id="pass">pass</h1>
 <p>Pass the keyword used to <strong>hold a place</strong> for future code. Pass keyword use when we add code in <strong>Loops, Functions, etc...</strong> later, But we do not want errors.</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln">1</span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s2">&#34;ABCD&#34;</span><span class="p">:</span>
-<span class="ln">2</span>    <span class="k">pass</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">1</span><span class="cl"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="s2">&#34;ABCD&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">2</span><span class="cl">    <span class="k">pass</span>
+</span></span></code></pre></div><hr>
 <h1 id="watch-video-tutorial-on-youtube">Watch Video Tutorial On Youtube:</h1>
 
 <div class="video">
@@ -326,13 +323,13 @@ Types of Loops: 1. For Loops
         <a href="https://giteshwagh.com/post/introduction-to-game-development/" class="nav-link" title="💡 Introduction To Game Development ">💡 Introduction To Game Development</a>
       </li>
       <li>
-        <a href="https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/" class="nav-link" title=" Hugo : World&#39;s Fastest Framework For Website Building 🔥 ">Hugo : World's Fastest Framework For Website Building 🔥</a>
+        <a href="https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/" class="nav-link" title=" Hugo : World&#39;s Fastest Framework For Website Building 🔥">Hugo : World's Fastest Framework For Website Building 🔥</a>
       </li>
       <li>
         <a href="https://giteshwagh.com/post/project-2-calculator-in-python-tutorial-8/" class="nav-link" title=" Project 2: Calculator - Python Tutorials For Beginners #8">Project 2: Calculator - Python Tutorials For Beginners #8</a>
       </li>
       <li>
-        <a href="https://giteshwagh.com/post/match-cases-in-python-tutorial-7/" class="nav-link" title=" Match Cases - Python Tutorials For Beginners #7">Match Cases - Python Tutorials For Beginners #7</a>
+        <a href="https://giteshwagh.com/post/match-cases-in-python-tutorial-7/" class="nav-link" title="Match Cases - Python Tutorials For Beginners #7">Match Cases - Python Tutorials For Beginners #7</a>
       </li>
       <li>
         <a href="https://giteshwagh.com/post/if-else-statements-in-python-tutorial-6/" class="nav-link" title=" If-Else statements - Python Tutorials For Beginners #6">If-Else statements - Python Tutorials For Beginners #6</a>
@@ -378,17 +375,17 @@ Types of Loops: 1. For Loops
       <nav class="tags_nav">
         <a href='https://giteshwagh.com/tags/programming/' class="post_tag button button_translucent" title="programming">
           PROGRAMMING
-          <span class="button_tally">15</span>
-        </a>
-        
-        <a href='https://giteshwagh.com/tags/coding/' class="post_tag button button_translucent" title="coding">
-          CODING
           <span class="button_tally">14</span>
         </a>
         
         <a href='https://giteshwagh.com/tags/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">14</span>
+        </a>
+        
+        <a href='https://giteshwagh.com/tags/coding/' class="post_tag button button_translucent" title="coding">
+          CODING
+          <span class="button_tally">13</span>
         </a>
         
         <a href='https://giteshwagh.com/tags/pythontutorial/' class="post_tag button button_translucent" title="pythontutorial">
@@ -441,8 +438,8 @@ Types of Loops: 1. For Loops
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://giteshwagh.com/tags/free_video_editor/' class="post_tag button button_translucent" title="free_video_editor">
-          FREE_VIDEO_EDITOR
+        <a href='https://giteshwagh.com/tags/free-video-editor/' class="post_tag button button_translucent" title="free-video-editor">
+          FREE-VIDEO-EDITOR
           <span class="button_tally">1</span>
         </a>
         
@@ -468,7 +465,7 @@ Types of Loops: 1. For Loops
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/coding/' class=" post_tag button button_translucent" data-position=14 title="coding">CODING<span class="button_tally">14</span>
+            <a href='https://giteshwagh.com/tags/coding/' class=" post_tag button button_translucent" data-position=13 title="coding">CODING<span class="button_tally">13</span>
             </a>
             
             
@@ -476,7 +473,7 @@ Types of Loops: 1. For Loops
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/free_video_editor/' class=" post_tag button button_translucent" data-position=1 title="free_video_editor">FREE_VIDEO_EDITOR<span class="button_tally">1</span>
+            <a href='https://giteshwagh.com/tags/free-video-editor/' class=" post_tag button button_translucent" data-position=1 title="free-video-editor">FREE-VIDEO-EDITOR<span class="button_tally">1</span>
             </a>
             
             
@@ -512,6 +509,18 @@ Types of Loops: 1. For Loops
             </a>
             
             
+            <a href='https://giteshwagh.com/tags/is-kdenlive-a-good-editing-software/' class=" post_tag button button_translucent" data-position=1 title="is-kdenlive-a-good-editing-software">IS-KDENLIVE-A-GOOD-EDITING-SOFTWARE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/is-kdenlive-better-than-premiere-pro/' class=" post_tag button button_translucent" data-position=1 title="is-kdenlive-better-than-premiere-pro">IS-KDENLIVE-BETTER-THAN-PREMIERE-PRO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/is-there-a-paid-version-of-kdenlive/' class=" post_tag button button_translucent" data-position=1 title="is-there-a-paid-version-of-kdenlive">IS-THERE-A-PAID-VERSION-OF-KDENLIVE<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='https://giteshwagh.com/tags/kdenlive/' class=" post_tag button button_translucent" data-position=1 title="kdenlive">KDENLIVE<span class="button_tally">1</span>
             </a>
             
@@ -520,7 +529,15 @@ Types of Loops: 1. For Loops
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/programming/' class=" post_tag button button_translucent" data-position=15 title="programming">PROGRAMMING<span class="button_tally">15</span>
+            <a href='https://giteshwagh.com/tags/match-cases/' class=" post_tag button button_translucent" data-position=1 title="match-cases">MATCH-CASES<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/match-cases-in-python/' class=" post_tag button button_translucent" data-position=1 title="match-cases-in-python">MATCH-CASES-IN-PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/programming/' class=" post_tag button button_translucent" data-position=14 title="programming">PROGRAMMING<span class="button_tally">14</span>
             </a>
             
             
@@ -544,7 +561,7 @@ Types of Loops: 1. For Loops
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/video_editing/' class=" post_tag button button_translucent" data-position=1 title="video_editing">VIDEO_EDITING<span class="button_tally">1</span>
+            <a href='https://giteshwagh.com/tags/video-editing/' class=" post_tag button button_translucent" data-position=1 title="video-editing">VIDEO-EDITING<span class="button_tally">1</span>
             </a>
             
             
@@ -557,6 +574,10 @@ Types of Loops: 1. For Loops
             
             
             <a href='https://giteshwagh.com/tags/web-development/' class=" post_tag button button_translucent" data-position=2 title="web-development">WEB-DEVELOPMENT<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/what-is-the-no-1-video-editing-app/' class=" post_tag button button_translucent" data-position=1 title="what-is-the-no-1-video-editing-app">WHAT-IS-THE-NO-1-VIDEO-EDITING-APP<span class="button_tally">1</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -665,7 +686,7 @@ Types of Loops: 1. For Loops
 
 <script type="text/javascript" src="https://giteshwagh.com/en/js/bundle.7eab802993c2219a1524025fa6db6589bfbe3122acef2e7e48e8efea7b96c14038e06774231b068a90bd90e9368d0dd7db208169f68831880c6469ef03702f97.js" integrity="sha512-fquAKZPCIZoVJAJfpttlib&#43;&#43;MSKs7y5&#43;SOjv6nuWwUA44Gd0IxsGipC9kOk2jQ3X2yCBafaIMYgMZGnvA3Avlw==" crossorigin="anonymous"></script>
 
-  <script src="https://giteshwagh.com/js/search.min.1b1254eb041cd756fc95f3091f63cf5363e45e881aa13c3da952b68cc085c07a9b960212f522e01621a0ed9538eac9b94e346edf62f0585f8aef843f42343a9e.js"></script>
+  <script src="https://giteshwagh.com/js/search.min.b19f217359693afb8f0abd75ca8de6becceec41f5304950fc48e165914ef227f44d10005d02a281a66e33b482e2ff27e6eb893111505deb4f072c307e1f887bb.js"></script>
 
   </body>
 </html>

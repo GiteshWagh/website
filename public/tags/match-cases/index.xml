@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Match Cases on Gitesh Wagh</title>
+    <link>https://giteshwagh.com/tags/match-cases/</link>
+    <description>Recent content in Match Cases on Gitesh Wagh</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Gitesh Wagh</copyright>
+    <lastBuildDate>Thu, 06 Jul 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://giteshwagh.com/tags/match-cases/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Match Cases - Python Tutorials For Beginners #7</title>
+      <link>https://giteshwagh.com/post/match-cases-in-python-tutorial-7/</link>
+      <pubDate>Thu, 06 Jul 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://giteshwagh.com/post/match-cases-in-python-tutorial-7/</guid>
+      <description>
+        
+          
+            Introduction Python is a popular programming language that offers many features and benefits for developers. One of these features is the ability to use match cases, which are a new way of writing conditional statements in Python 3.10 and above.
+In this blog post, we will learn how to use match cases in Python, and see some examples of how they can simplify and improve your code.
+What Are Match Cases In Python?
+          
+          
+        
+      </description>
+    </item>
+    
+  </channel>
+</rss>

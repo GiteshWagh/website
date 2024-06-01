@@ -221,202 +221,202 @@
 <p>In summary, this project implements a basic snake game where players control a snake to collect green snacks and avoid collisions. It demonstrates fundamental concepts of game programming, user input handling, collision detection, and graphical rendering using the Pygame library.</p>
 <hr>
 <h3 id="code">Code:</h3>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="ln">  1</span><span class="kn">import</span> <span class="nn">math</span>
-<span class="ln">  2</span><span class="kn">import</span> <span class="nn">random</span>
-<span class="ln">  3</span><span class="kn">import</span> <span class="nn">pygame</span>
-<span class="ln">  4</span><span class="kn">import</span> <span class="nn">random</span>
-<span class="ln">  5</span><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
-<span class="ln">  6</span><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
-<span class="ln">  7</span>
-<span class="ln">  8</span><span class="n">width</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="ln">  9</span><span class="n">height</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="ln"> 10</span>
-<span class="ln"> 11</span><span class="n">cols</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="ln"> 12</span><span class="n">rows</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="ln"> 13</span>
-<span class="ln"> 14</span>
-<span class="ln"> 15</span><span class="k">class</span> <span class="nc">cube</span><span class="p">():</span>
-<span class="ln"> 16</span>    <span class="n">rows</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="ln"> 17</span>    <span class="n">w</span> <span class="o">=</span> <span class="mi">500</span>
-<span class="ln"> 18</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">dirnx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dirny</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)):</span>
-<span class="ln"> 19</span>        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">start</span>
-<span class="ln"> 20</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="n">dirnx</span>
-<span class="ln"> 21</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="n">dirny</span> <span class="c1"># &#34;L&#34;, &#34;R&#34;, &#34;U&#34;, &#34;D&#34;</span>
-<span class="ln"> 22</span>        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
-<span class="ln"> 23</span>
-<span class="ln"> 24</span>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dirnx</span><span class="p">,</span> <span class="n">dirny</span><span class="p">):</span>
-<span class="ln"> 25</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="n">dirnx</span>
-<span class="ln"> 26</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="n">dirny</span>
-<span class="ln"> 27</span>        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>  <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">)</span>
-<span class="ln"> 28</span>            
-<span class="ln"> 29</span>
-<span class="ln"> 30</span>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">eyes</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-<span class="ln"> 31</span>        <span class="n">dis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span>
-<span class="ln"> 32</span>        <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="ln"> 33</span>        <span class="n">j</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-<span class="ln"> 34</span>        
-<span class="ln"> 35</span>        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">dis</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">dis</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
-<span class="ln"> 36</span>        <span class="k">if</span> <span class="n">eyes</span><span class="p">:</span>
-<span class="ln"> 37</span>            <span class="n">centre</span> <span class="o">=</span> <span class="n">dis</span><span class="o">//</span><span class="mi">2</span>
-<span class="ln"> 38</span>            <span class="n">radius</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="ln"> 39</span>            <span class="n">circleMiddle</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="n">centre</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span><span class="n">j</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">8</span><span class="p">)</span>
-<span class="ln"> 40</span>            <span class="n">circleMiddle2</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dis</span> <span class="o">+</span> <span class="n">dis</span> <span class="o">-</span><span class="n">radius</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">8</span><span class="p">)</span>
-<span class="ln"> 41</span>            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">circleMiddle</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
-<span class="ln"> 42</span>            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">circleMiddle2</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
-<span class="ln"> 43</span>        
-<span class="ln"> 44</span>
-<span class="ln"> 45</span>
-<span class="ln"> 46</span><span class="k">class</span> <span class="nc">snake</span><span class="p">():</span>
-<span class="ln"> 47</span>    <span class="n">body</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ln"> 48</span>    <span class="n">turns</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ln"> 49</span>    
-<span class="ln"> 50</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
-<span class="ln"> 51</span>        <span class="c1">#pos is given as coordinates on the grid ex (1,5)</span>
-<span class="ln"> 52</span>        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
-<span class="ln"> 53</span>        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-<span class="ln"> 54</span>        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
-<span class="ln"> 55</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln"> 56</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="ln"> 57</span>    
-<span class="ln"> 58</span>    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ln"> 59</span>        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
-<span class="ln"> 60</span>            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
-<span class="ln"> 61</span>                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
-<span class="ln"> 62</span>            <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
-<span class="ln"> 63</span>
-<span class="ln"> 64</span>            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
-<span class="ln"> 65</span>                <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span>
-<span class="ln"> 66</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="ln"> 67</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln"> 68</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
-<span class="ln"> 69</span>                <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
-<span class="ln"> 70</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="ln"> 71</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln"> 72</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
-<span class="ln"> 73</span>                <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span>
-<span class="ln"> 74</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
-<span class="ln"> 75</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln"> 76</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
-<span class="ln"> 77</span>                <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span>
-<span class="ln"> 78</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="ln"> 79</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln"> 80</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
-<span class="ln"> 81</span>        
-<span class="ln"> 82</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">):</span>
-<span class="ln"> 83</span>            <span class="n">p</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]</span>
-<span class="ln"> 84</span>            <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">:</span>
-<span class="ln"> 85</span>                <span class="n">turn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
-<span class="ln"> 86</span>                <span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">turn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">turn</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="ln"> 87</span>                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-<span class="ln"> 88</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
-<span class="ln"> 89</span>            <span class="k">else</span><span class="p">:</span>
-<span class="ln"> 90</span>                <span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="n">c</span><span class="o">.</span><span class="n">dirny</span><span class="p">)</span>
-<span class="ln"> 91</span>        
-<span class="ln"> 92</span>        
-<span class="ln"> 93</span>    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">pos</span><span class="p">):</span>
-<span class="ln"> 94</span>        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
-<span class="ln"> 95</span>        <span class="bp">self</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="ln"> 96</span>        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
-<span class="ln"> 97</span>        <span class="bp">self</span><span class="o">.</span><span class="n">turns</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="ln"> 98</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln"> 99</span>        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="ln">100</span>
-<span class="ln">101</span>    <span class="k">def</span> <span class="nf">addCube</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="ln">102</span>        <span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="ln">103</span>        <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span> <span class="n">tail</span><span class="o">.</span><span class="n">dirny</span>
-<span class="ln">104</span>
-<span class="ln">105</span>        <span class="k">if</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ln">106</span>            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
-<span class="ln">107</span>        <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ln">108</span>            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
-<span class="ln">109</span>        <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-<span class="ln">110</span>            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
-<span class="ln">111</span>        <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
-<span class="ln">112</span>            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
-<span class="ln">113</span>
-<span class="ln">114</span>        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="n">dx</span>
-<span class="ln">115</span>        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="n">dy</span>
-<span class="ln">116</span>    
-<span class="ln">117</span>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">):</span>
-<span class="ln">118</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">):</span>
-<span class="ln">119</span>            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ln">120</span>                <span class="n">c</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-<span class="ln">121</span>            <span class="k">else</span><span class="p">:</span>
-<span class="ln">122</span>                <span class="n">c</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
-<span class="ln">123</span>
-<span class="ln">124</span>
-<span class="ln">125</span>
-<span class="ln">126</span><span class="k">def</span> <span class="nf">redrawWindow</span><span class="p">():</span>
-<span class="ln">127</span>    <span class="k">global</span> <span class="n">win</span>
-<span class="ln">128</span>    <span class="n">win</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-<span class="ln">129</span>    <span class="n">drawGrid</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">win</span><span class="p">)</span>
-<span class="ln">130</span>    <span class="n">s</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
-<span class="ln">131</span>    <span class="n">snack</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
-<span class="ln">132</span>    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
-<span class="ln">133</span>    <span class="k">pass</span>
-<span class="ln">134</span>
-<span class="ln">135</span>
-<span class="ln">136</span>
-<span class="ln">137</span><span class="k">def</span> <span class="nf">drawGrid</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">surface</span><span class="p">):</span>
-<span class="ln">138</span>    <span class="n">sizeBtwn</span> <span class="o">=</span> <span class="n">w</span> <span class="o">//</span> <span class="n">rows</span>
-<span class="ln">139</span>
-<span class="ln">140</span>    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln">141</span>    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="ln">142</span>    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
-<span class="ln">143</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sizeBtwn</span>
-<span class="ln">144</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span><span class="n">sizeBtwn</span>
-<span class="ln">145</span>
-<span class="ln">146</span>        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="n">w</span><span class="p">))</span>
-<span class="ln">147</span>        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">),(</span><span class="n">w</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
-<span class="ln">148</span>    
-<span class="ln">149</span>
-<span class="ln">150</span>
-<span class="ln">151</span><span class="k">def</span> <span class="nf">randomSnack</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
-<span class="ln">152</span>    <span class="n">positions</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">body</span>
-<span class="ln">153</span>
-<span class="ln">154</span>    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-<span class="ln">155</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="ln">156</span>        <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="ln">157</span>        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">z</span><span class="p">:</span><span class="n">z</span><span class="o">.</span><span class="n">pos</span> <span class="o">==</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">positions</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ln">158</span>               <span class="k">continue</span>
-<span class="ln">159</span>        <span class="k">else</span><span class="p">:</span>
-<span class="ln">160</span>               <span class="k">break</span>
-<span class="ln">161</span>
-<span class="ln">162</span>    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
-<span class="ln">163</span>
-<span class="ln">164</span>
-<span class="ln">165</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-<span class="ln">166</span>    <span class="k">global</span> <span class="n">s</span><span class="p">,</span> <span class="n">snack</span><span class="p">,</span> <span class="n">win</span>
-<span class="ln">167</span>    <span class="n">win</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">))</span>
-<span class="ln">168</span>    <span class="n">s</span> <span class="o">=</span> <span class="n">snake</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="ln">169</span>    <span class="n">s</span><span class="o">.</span><span class="n">addCube</span><span class="p">()</span>
-<span class="ln">170</span>    <span class="n">snack</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">randomSnack</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">s</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-<span class="ln">171</span>    <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
-<span class="ln">172</span>    <span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
-<span class="ln">173</span>    
-<span class="ln">174</span>    <span class="k">while</span> <span class="n">flag</span><span class="p">:</span>
-<span class="ln">175</span>        <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-<span class="ln">176</span>        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="ln">177</span>        <span class="n">s</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
-<span class="ln">178</span>        <span class="n">headPos</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span>
-<span class="ln">179</span>        <span class="k">if</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-<span class="ln">180</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Score:&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">))</span>
-<span class="ln">181</span>            <span class="n">s</span><span class="o">.</span><span class="n">reset</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
-<span class="ln">182</span>
-<span class="ln">183</span>        <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">snack</span><span class="o">.</span><span class="n">pos</span><span class="p">:</span>
-<span class="ln">184</span>            <span class="n">s</span><span class="o">.</span><span class="n">addCube</span><span class="p">()</span>
-<span class="ln">185</span>            <span class="n">snack</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">randomSnack</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">s</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
-<span class="ln">186</span>            
-<span class="ln">187</span>        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">)):</span>
-<span class="ln">188</span>            <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">z</span><span class="p">:</span><span class="n">z</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">:])):</span>
-<span class="ln">189</span>                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Score:&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">))</span>
-<span class="ln">190</span>                <span class="n">s</span><span class="o">.</span><span class="n">reset</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="ln">191</span>                <span class="k">break</span>
-<span class="ln">192</span>                    
-<span class="ln">193</span>        <span class="n">redrawWindow</span><span class="p">()</span>
-<span class="ln">194</span>
-<span class="ln">195</span><span class="n">main</span><span class="p">()</span>
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="ln">  1</span><span class="cl"><span class="kn">import</span> <span class="nn">math</span>
+</span></span><span class="line"><span class="ln">  2</span><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="ln">  3</span><span class="cl"><span class="kn">import</span> <span class="nn">pygame</span>
+</span></span><span class="line"><span class="ln">  4</span><span class="cl"><span class="kn">import</span> <span class="nn">random</span>
+</span></span><span class="line"><span class="ln">  5</span><span class="cl"><span class="kn">import</span> <span class="nn">tkinter</span> <span class="k">as</span> <span class="nn">tk</span>
+</span></span><span class="line"><span class="ln">  6</span><span class="cl"><span class="kn">from</span> <span class="nn">tkinter</span> <span class="kn">import</span> <span class="n">messagebox</span>
+</span></span><span class="line"><span class="ln">  7</span><span class="cl">
+</span></span><span class="line"><span class="ln">  8</span><span class="cl"><span class="n">width</span> <span class="o">=</span> <span class="mi">500</span>
+</span></span><span class="line"><span class="ln">  9</span><span class="cl"><span class="n">height</span> <span class="o">=</span> <span class="mi">500</span>
+</span></span><span class="line"><span class="ln"> 10</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 11</span><span class="cl"><span class="n">cols</span> <span class="o">=</span> <span class="mi">25</span>
+</span></span><span class="line"><span class="ln"> 12</span><span class="cl"><span class="n">rows</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="ln"> 13</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 14</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 15</span><span class="cl"><span class="k">class</span> <span class="nc">cube</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 16</span><span class="cl">    <span class="n">rows</span> <span class="o">=</span> <span class="mi">20</span>
+</span></span><span class="line"><span class="ln"> 17</span><span class="cl">    <span class="n">w</span> <span class="o">=</span> <span class="mi">500</span>
+</span></span><span class="line"><span class="ln"> 18</span><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="n">dirnx</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dirny</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">)):</span>
+</span></span><span class="line"><span class="ln"> 19</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span> <span class="o">=</span> <span class="n">start</span>
+</span></span><span class="line"><span class="ln"> 20</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="n">dirnx</span>
+</span></span><span class="line"><span class="ln"> 21</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="n">dirny</span> <span class="c1"># &#34;L&#34;, &#34;R&#34;, &#34;U&#34;, &#34;D&#34;</span>
+</span></span><span class="line"><span class="ln"> 22</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+</span></span><span class="line"><span class="ln"> 23</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 24</span><span class="cl">    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dirnx</span><span class="p">,</span> <span class="n">dirny</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 25</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="n">dirnx</span>
+</span></span><span class="line"><span class="ln"> 26</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="n">dirny</span>
+</span></span><span class="line"><span class="ln"> 27</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">pos</span>  <span class="o">=</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 28</span><span class="cl">            
+</span></span><span class="line"><span class="ln"> 29</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 30</span><span class="cl">    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">,</span> <span class="n">eyes</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 31</span><span class="cl">        <span class="n">dis</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">w</span> <span class="o">//</span> <span class="bp">self</span><span class="o">.</span><span class="n">rows</span>
+</span></span><span class="line"><span class="ln"> 32</span><span class="cl">        <span class="n">i</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 33</span><span class="cl">        <span class="n">j</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 34</span><span class="cl">        
+</span></span><span class="line"><span class="ln"> 35</span><span class="cl">        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">rect</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">color</span><span class="p">,</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">j</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">dis</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="n">dis</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln"> 36</span><span class="cl">        <span class="k">if</span> <span class="n">eyes</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 37</span><span class="cl">            <span class="n">centre</span> <span class="o">=</span> <span class="n">dis</span><span class="o">//</span><span class="mi">2</span>
+</span></span><span class="line"><span class="ln"> 38</span><span class="cl">            <span class="n">radius</span> <span class="o">=</span> <span class="mi">3</span>
+</span></span><span class="line"><span class="ln"> 39</span><span class="cl">            <span class="n">circleMiddle</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="n">centre</span><span class="o">-</span><span class="n">radius</span><span class="p">,</span><span class="n">j</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 40</span><span class="cl">            <span class="n">circleMiddle2</span> <span class="o">=</span> <span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">dis</span> <span class="o">+</span> <span class="n">dis</span> <span class="o">-</span><span class="n">radius</span><span class="o">*</span><span class="mi">2</span><span class="p">,</span> <span class="n">j</span><span class="o">*</span><span class="n">dis</span><span class="o">+</span><span class="mi">8</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 41</span><span class="cl">            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">circleMiddle</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 42</span><span class="cl">            <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">circle</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="n">circleMiddle2</span><span class="p">,</span> <span class="n">radius</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 43</span><span class="cl">        
+</span></span><span class="line"><span class="ln"> 44</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 45</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 46</span><span class="cl"><span class="k">class</span> <span class="nc">snake</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 47</span><span class="cl">    <span class="n">body</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="ln"> 48</span><span class="cl">    <span class="n">turns</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="ln"> 49</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 50</span><span class="cl">    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 51</span><span class="cl">        <span class="c1">#pos is given as coordinates on the grid ex (1,5)</span>
+</span></span><span class="line"><span class="ln"> 52</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">color</span> <span class="o">=</span> <span class="n">color</span>
+</span></span><span class="line"><span class="ln"> 53</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 54</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 55</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 56</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 57</span><span class="cl">    
+</span></span><span class="line"><span class="ln"> 58</span><span class="cl">    <span class="k">def</span> <span class="nf">move</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 59</span><span class="cl">        <span class="k">for</span> <span class="n">event</span> <span class="ow">in</span> <span class="n">pygame</span><span class="o">.</span><span class="n">event</span><span class="o">.</span><span class="n">get</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln"> 60</span><span class="cl">            <span class="k">if</span> <span class="n">event</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">pygame</span><span class="o">.</span><span class="n">QUIT</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 61</span><span class="cl">                <span class="n">pygame</span><span class="o">.</span><span class="n">quit</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 62</span><span class="cl">            <span class="n">keys</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">key</span><span class="o">.</span><span class="n">get_pressed</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln"> 63</span><span class="cl">
+</span></span><span class="line"><span class="ln"> 64</span><span class="cl">            <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">keys</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 65</span><span class="cl">                <span class="k">if</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_LEFT</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln"> 66</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 67</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 68</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 69</span><span class="cl">                <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_RIGHT</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln"> 70</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 71</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 72</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 73</span><span class="cl">                <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_UP</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln"> 74</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 75</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 76</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 77</span><span class="cl">                <span class="k">elif</span> <span class="n">keys</span><span class="p">[</span><span class="n">pygame</span><span class="o">.</span><span class="n">K_DOWN</span><span class="p">]:</span>
+</span></span><span class="line"><span class="ln"> 78</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln"> 79</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 80</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">dirny</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 81</span><span class="cl">        
+</span></span><span class="line"><span class="ln"> 82</span><span class="cl">        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 83</span><span class="cl">            <span class="n">p</span> <span class="o">=</span> <span class="n">c</span><span class="o">.</span><span class="n">pos</span><span class="p">[:]</span>
+</span></span><span class="line"><span class="ln"> 84</span><span class="cl">            <span class="k">if</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 85</span><span class="cl">                <span class="n">turn</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="p">[</span><span class="n">p</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln"> 86</span><span class="cl">                <span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">turn</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">turn</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</span></span><span class="line"><span class="ln"> 87</span><span class="cl">                <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 88</span><span class="cl">                    <span class="bp">self</span><span class="o">.</span><span class="n">turns</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 89</span><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln"> 90</span><span class="cl">                <span class="n">c</span><span class="o">.</span><span class="n">move</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span><span class="n">c</span><span class="o">.</span><span class="n">dirny</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 91</span><span class="cl">        
+</span></span><span class="line"><span class="ln"> 92</span><span class="cl">        
+</span></span><span class="line"><span class="ln"> 93</span><span class="cl">    <span class="k">def</span> <span class="nf">reset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">pos</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln"> 94</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">head</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">pos</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 95</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">body</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="ln"> 96</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">head</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln"> 97</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">turns</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="ln"> 98</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln"> 99</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="ln">100</span><span class="cl">
+</span></span><span class="line"><span class="ln">101</span><span class="cl">    <span class="k">def</span> <span class="nf">addCube</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">102</span><span class="cl">        <span class="n">tail</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</span></span><span class="line"><span class="ln">103</span><span class="cl">        <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">tail</span><span class="o">.</span><span class="n">dirnx</span><span class="p">,</span> <span class="n">tail</span><span class="o">.</span><span class="n">dirny</span>
+</span></span><span class="line"><span class="ln">104</span><span class="cl">
+</span></span><span class="line"><span class="ln">105</span><span class="cl">        <span class="k">if</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">1</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">106</span><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+</span></span><span class="line"><span class="ln">107</span><span class="cl">        <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">108</span><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">])))</span>
+</span></span><span class="line"><span class="ln">109</span><span class="cl">        <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">110</span><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+</span></span><span class="line"><span class="ln">111</span><span class="cl">        <span class="k">elif</span> <span class="n">dx</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">dy</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">112</span><span class="cl">            <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cube</span><span class="p">((</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">tail</span><span class="o">.</span><span class="n">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)))</span>
+</span></span><span class="line"><span class="ln">113</span><span class="cl">
+</span></span><span class="line"><span class="ln">114</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dirnx</span> <span class="o">=</span> <span class="n">dx</span>
+</span></span><span class="line"><span class="ln">115</span><span class="cl">        <span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">dirny</span> <span class="o">=</span> <span class="n">dy</span>
+</span></span><span class="line"><span class="ln">116</span><span class="cl">    
+</span></span><span class="line"><span class="ln">117</span><span class="cl">    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surface</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">118</span><span class="cl">        <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">body</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">119</span><span class="cl">            <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">120</span><span class="cl">                <span class="n">c</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">121</span><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">122</span><span class="cl">                <span class="n">c</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">surface</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">123</span><span class="cl">
+</span></span><span class="line"><span class="ln">124</span><span class="cl">
+</span></span><span class="line"><span class="ln">125</span><span class="cl">
+</span></span><span class="line"><span class="ln">126</span><span class="cl"><span class="k">def</span> <span class="nf">redrawWindow</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">127</span><span class="cl">    <span class="k">global</span> <span class="n">win</span>
+</span></span><span class="line"><span class="ln">128</span><span class="cl">    <span class="n">win</span><span class="o">.</span><span class="n">fill</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">129</span><span class="cl">    <span class="n">drawGrid</span><span class="p">(</span><span class="n">width</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">win</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">130</span><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">131</span><span class="cl">    <span class="n">snack</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">win</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">132</span><span class="cl">    <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">update</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">133</span><span class="cl">    <span class="k">pass</span>
+</span></span><span class="line"><span class="ln">134</span><span class="cl">
+</span></span><span class="line"><span class="ln">135</span><span class="cl">
+</span></span><span class="line"><span class="ln">136</span><span class="cl">
+</span></span><span class="line"><span class="ln">137</span><span class="cl"><span class="k">def</span> <span class="nf">drawGrid</span><span class="p">(</span><span class="n">w</span><span class="p">,</span> <span class="n">rows</span><span class="p">,</span> <span class="n">surface</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">138</span><span class="cl">    <span class="n">sizeBtwn</span> <span class="o">=</span> <span class="n">w</span> <span class="o">//</span> <span class="n">rows</span>
+</span></span><span class="line"><span class="ln">139</span><span class="cl">
+</span></span><span class="line"><span class="ln">140</span><span class="cl">    <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">141</span><span class="cl">    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="ln">142</span><span class="cl">    <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">rows</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">143</span><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">sizeBtwn</span>
+</span></span><span class="line"><span class="ln">144</span><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span><span class="n">sizeBtwn</span>
+</span></span><span class="line"><span class="ln">145</span><span class="cl">
+</span></span><span class="line"><span class="ln">146</span><span class="cl">        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="n">x</span><span class="p">,</span><span class="n">w</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">147</span><span class="cl">        <span class="n">pygame</span><span class="o">.</span><span class="n">draw</span><span class="o">.</span><span class="n">line</span><span class="p">(</span><span class="n">surface</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">),(</span><span class="n">w</span><span class="p">,</span><span class="n">y</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">148</span><span class="cl">    
+</span></span><span class="line"><span class="ln">149</span><span class="cl">
+</span></span><span class="line"><span class="ln">150</span><span class="cl">
+</span></span><span class="line"><span class="ln">151</span><span class="cl"><span class="k">def</span> <span class="nf">randomSnack</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span> <span class="n">item</span><span class="p">):</span>
+</span></span><span class="line"><span class="ln">152</span><span class="cl">    <span class="n">positions</span> <span class="o">=</span> <span class="n">item</span><span class="o">.</span><span class="n">body</span>
+</span></span><span class="line"><span class="ln">153</span><span class="cl">
+</span></span><span class="line"><span class="ln">154</span><span class="cl">    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">155</span><span class="cl">        <span class="n">x</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">156</span><span class="cl">        <span class="n">y</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">rows</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">157</span><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">z</span><span class="p">:</span><span class="n">z</span><span class="o">.</span><span class="n">pos</span> <span class="o">==</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">),</span> <span class="n">positions</span><span class="p">)))</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">158</span><span class="cl">               <span class="k">continue</span>
+</span></span><span class="line"><span class="ln">159</span><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">160</span><span class="cl">               <span class="k">break</span>
+</span></span><span class="line"><span class="ln">161</span><span class="cl">
+</span></span><span class="line"><span class="ln">162</span><span class="cl">    <span class="k">return</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">163</span><span class="cl">
+</span></span><span class="line"><span class="ln">164</span><span class="cl">
+</span></span><span class="line"><span class="ln">165</span><span class="cl"><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span></span><span class="line"><span class="ln">166</span><span class="cl">    <span class="k">global</span> <span class="n">s</span><span class="p">,</span> <span class="n">snack</span><span class="p">,</span> <span class="n">win</span>
+</span></span><span class="line"><span class="ln">167</span><span class="cl">    <span class="n">win</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">display</span><span class="o">.</span><span class="n">set_mode</span><span class="p">((</span><span class="n">width</span><span class="p">,</span><span class="n">height</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">168</span><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="n">snake</span><span class="p">((</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">169</span><span class="cl">    <span class="n">s</span><span class="o">.</span><span class="n">addCube</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">170</span><span class="cl">    <span class="n">snack</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">randomSnack</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">s</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">171</span><span class="cl">    <span class="n">flag</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="ln">172</span><span class="cl">    <span class="n">clock</span> <span class="o">=</span> <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">Clock</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">173</span><span class="cl">    
+</span></span><span class="line"><span class="ln">174</span><span class="cl">    <span class="k">while</span> <span class="n">flag</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">175</span><span class="cl">        <span class="n">pygame</span><span class="o">.</span><span class="n">time</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">176</span><span class="cl">        <span class="n">clock</span><span class="o">.</span><span class="n">tick</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="ln">177</span><span class="cl">        <span class="n">s</span><span class="o">.</span><span class="n">move</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">178</span><span class="cl">        <span class="n">headPos</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">head</span><span class="o">.</span><span class="n">pos</span>
+</span></span><span class="line"><span class="ln">179</span><span class="cl">        <span class="k">if</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">headPos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">180</span><span class="cl">            <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Score:&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">181</span><span class="cl">            <span class="n">s</span><span class="o">.</span><span class="n">reset</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">182</span><span class="cl">
+</span></span><span class="line"><span class="ln">183</span><span class="cl">        <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span> <span class="o">==</span> <span class="n">snack</span><span class="o">.</span><span class="n">pos</span><span class="p">:</span>
+</span></span><span class="line"><span class="ln">184</span><span class="cl">            <span class="n">s</span><span class="o">.</span><span class="n">addCube</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">185</span><span class="cl">            <span class="n">snack</span> <span class="o">=</span> <span class="n">cube</span><span class="p">(</span><span class="n">randomSnack</span><span class="p">(</span><span class="n">rows</span><span class="p">,</span><span class="n">s</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">186</span><span class="cl">            
+</span></span><span class="line"><span class="ln">187</span><span class="cl">        <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">)):</span>
+</span></span><span class="line"><span class="ln">188</span><span class="cl">            <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="n">x</span><span class="p">]</span><span class="o">.</span><span class="n">pos</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">z</span><span class="p">:</span><span class="n">z</span><span class="o">.</span><span class="n">pos</span><span class="p">,</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">:])):</span>
+</span></span><span class="line"><span class="ln">189</span><span class="cl">                <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Score:&#34;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">body</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">190</span><span class="cl">                <span class="n">s</span><span class="o">.</span><span class="n">reset</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</span></span><span class="line"><span class="ln">191</span><span class="cl">                <span class="k">break</span>
+</span></span><span class="line"><span class="ln">192</span><span class="cl">                    
+</span></span><span class="line"><span class="ln">193</span><span class="cl">        <span class="n">redrawWindow</span><span class="p">()</span>
+</span></span><span class="line"><span class="ln">194</span><span class="cl">
+</span></span><span class="line"><span class="ln">195</span><span class="cl"><span class="n">main</span><span class="p">()</span>
+</span></span></code></pre></div><hr>
 
     </div>
 <div class="post_comments">
@@ -461,13 +461,13 @@
         <a href="https://giteshwagh.com/post/introduction-to-game-development/" class="nav-link" title="💡 Introduction To Game Development ">💡 Introduction To Game Development</a>
       </li>
       <li>
-        <a href="https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/" class="nav-link" title=" Hugo : World&#39;s Fastest Framework For Website Building 🔥 ">Hugo : World's Fastest Framework For Website Building 🔥</a>
+        <a href="https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/" class="nav-link" title=" Hugo : World&#39;s Fastest Framework For Website Building 🔥">Hugo : World's Fastest Framework For Website Building 🔥</a>
       </li>
       <li>
         <a href="https://giteshwagh.com/post/project-2-calculator-in-python-tutorial-8/" class="nav-link" title=" Project 2: Calculator - Python Tutorials For Beginners #8">Project 2: Calculator - Python Tutorials For Beginners #8</a>
       </li>
       <li>
-        <a href="https://giteshwagh.com/post/match-cases-in-python-tutorial-7/" class="nav-link" title=" Match Cases - Python Tutorials For Beginners #7">Match Cases - Python Tutorials For Beginners #7</a>
+        <a href="https://giteshwagh.com/post/match-cases-in-python-tutorial-7/" class="nav-link" title="Match Cases - Python Tutorials For Beginners #7">Match Cases - Python Tutorials For Beginners #7</a>
       </li>
       <li>
         <a href="https://giteshwagh.com/post/if-else-statements-in-python-tutorial-6/" class="nav-link" title=" If-Else statements - Python Tutorials For Beginners #6">If-Else statements - Python Tutorials For Beginners #6</a>
@@ -513,17 +513,17 @@
       <nav class="tags_nav">
         <a href='https://giteshwagh.com/tags/programming/' class="post_tag button button_translucent" title="programming">
           PROGRAMMING
-          <span class="button_tally">15</span>
-        </a>
-        
-        <a href='https://giteshwagh.com/tags/coding/' class="post_tag button button_translucent" title="coding">
-          CODING
           <span class="button_tally">14</span>
         </a>
         
         <a href='https://giteshwagh.com/tags/python/' class="post_tag button button_translucent" title="python">
           PYTHON
           <span class="button_tally">14</span>
+        </a>
+        
+        <a href='https://giteshwagh.com/tags/coding/' class="post_tag button button_translucent" title="coding">
+          CODING
+          <span class="button_tally">13</span>
         </a>
         
         <a href='https://giteshwagh.com/tags/pythontutorial/' class="post_tag button button_translucent" title="pythontutorial">
@@ -576,8 +576,8 @@
           <span class="button_tally">1</span>
         </a>
         
-        <a href='https://giteshwagh.com/tags/free_video_editor/' class="post_tag button button_translucent" title="free_video_editor">
-          FREE_VIDEO_EDITOR
+        <a href='https://giteshwagh.com/tags/free-video-editor/' class="post_tag button button_translucent" title="free-video-editor">
+          FREE-VIDEO-EDITOR
           <span class="button_tally">1</span>
         </a>
         
@@ -603,7 +603,7 @@
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/coding/' class=" post_tag button button_translucent" data-position=14 title="coding">CODING<span class="button_tally">14</span>
+            <a href='https://giteshwagh.com/tags/coding/' class=" post_tag button button_translucent" data-position=13 title="coding">CODING<span class="button_tally">13</span>
             </a>
             
             
@@ -611,7 +611,7 @@
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/free_video_editor/' class=" post_tag button button_translucent" data-position=1 title="free_video_editor">FREE_VIDEO_EDITOR<span class="button_tally">1</span>
+            <a href='https://giteshwagh.com/tags/free-video-editor/' class=" post_tag button button_translucent" data-position=1 title="free-video-editor">FREE-VIDEO-EDITOR<span class="button_tally">1</span>
             </a>
             
             
@@ -647,6 +647,18 @@
             </a>
             
             
+            <a href='https://giteshwagh.com/tags/is-kdenlive-a-good-editing-software/' class=" post_tag button button_translucent" data-position=1 title="is-kdenlive-a-good-editing-software">IS-KDENLIVE-A-GOOD-EDITING-SOFTWARE<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/is-kdenlive-better-than-premiere-pro/' class=" post_tag button button_translucent" data-position=1 title="is-kdenlive-better-than-premiere-pro">IS-KDENLIVE-BETTER-THAN-PREMIERE-PRO<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/is-there-a-paid-version-of-kdenlive/' class=" post_tag button button_translucent" data-position=1 title="is-there-a-paid-version-of-kdenlive">IS-THERE-A-PAID-VERSION-OF-KDENLIVE<span class="button_tally">1</span>
+            </a>
+            
+            
             <a href='https://giteshwagh.com/tags/kdenlive/' class=" post_tag button button_translucent" data-position=1 title="kdenlive">KDENLIVE<span class="button_tally">1</span>
             </a>
             
@@ -655,7 +667,15 @@
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/programming/' class=" post_tag button button_translucent" data-position=15 title="programming">PROGRAMMING<span class="button_tally">15</span>
+            <a href='https://giteshwagh.com/tags/match-cases/' class=" post_tag button button_translucent" data-position=1 title="match-cases">MATCH-CASES<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/match-cases-in-python/' class=" post_tag button button_translucent" data-position=1 title="match-cases-in-python">MATCH-CASES-IN-PYTHON<span class="button_tally">1</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/programming/' class=" post_tag button button_translucent" data-position=14 title="programming">PROGRAMMING<span class="button_tally">14</span>
             </a>
             
             
@@ -679,7 +699,7 @@
             </a>
             
             
-            <a href='https://giteshwagh.com/tags/video_editing/' class=" post_tag button button_translucent" data-position=1 title="video_editing">VIDEO_EDITING<span class="button_tally">1</span>
+            <a href='https://giteshwagh.com/tags/video-editing/' class=" post_tag button button_translucent" data-position=1 title="video-editing">VIDEO-EDITING<span class="button_tally">1</span>
             </a>
             
             
@@ -692,6 +712,10 @@
             
             
             <a href='https://giteshwagh.com/tags/web-development/' class=" post_tag button button_translucent" data-position=2 title="web-development">WEB-DEVELOPMENT<span class="button_tally">2</span>
+            </a>
+            
+            
+            <a href='https://giteshwagh.com/tags/what-is-the-no-1-video-editing-app/' class=" post_tag button button_translucent" data-position=1 title="what-is-the-no-1-video-editing-app">WHAT-IS-THE-NO-1-VIDEO-EDITING-APP<span class="button_tally">1</span>
             </a>
             
             <div class="tags_sort"><span title="sort alphabetically">[A~Z]</span><span title="sort by count">[0~9]</span>
@@ -800,7 +824,7 @@
 
 <script type="text/javascript" src="https://giteshwagh.com/en/js/bundle.7eab802993c2219a1524025fa6db6589bfbe3122acef2e7e48e8efea7b96c14038e06774231b068a90bd90e9368d0dd7db208169f68831880c6469ef03702f97.js" integrity="sha512-fquAKZPCIZoVJAJfpttlib&#43;&#43;MSKs7y5&#43;SOjv6nuWwUA44Gd0IxsGipC9kOk2jQ3X2yCBafaIMYgMZGnvA3Avlw==" crossorigin="anonymous"></script>
 
-  <script src="https://giteshwagh.com/js/search.min.1b1254eb041cd756fc95f3091f63cf5363e45e881aa13c3da952b68cc085c07a9b960212f522e01621a0ed9538eac9b94e346edf62f0585f8aef843f42343a9e.js"></script>
+  <script src="https://giteshwagh.com/js/search.min.b19f217359693afb8f0abd75ca8de6becceec41f5304950fc48e165914ef227f44d10005d02a281a66e33b482e2ff27e6eb893111505deb4f072c307e1f887bb.js"></script>
 
   </body>
 </html>

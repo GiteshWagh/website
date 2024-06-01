@@ -47,14 +47,17 @@
     <loc>https://giteshwagh.com/tags/coding/</loc>
     <lastmod>2023-10-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://giteshwagh.com/categories/python/</loc>
+    <loc>https://giteshwagh.com/tags/python/</loc>
     <lastmod>2023-10-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://giteshwagh.com/tags/python/</loc>
+    <loc>https://giteshwagh.com/categories/python/</loc>
     <lastmod>2023-10-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/tags/pythontutorial/</loc>
     <lastmod>2023-10-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/projects/project-5-snake-game-in-python/</loc>
+    <lastmod>2023-08-24T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/projects/</loc>
     <lastmod>2023-08-24T00:00:00+00:00</lastmod>
@@ -62,11 +65,14 @@
     <loc>https://giteshwagh.com/categories/python-projects/</loc>
     <lastmod>2023-08-24T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://giteshwagh.com/projects/project-5-snake-game-in-python/</loc>
-    <lastmod>2023-08-24T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://giteshwagh.com/projects/project-4-calculator-in-python/</loc>
     <lastmod>2023-08-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/post/introduction-to-game-development/</loc>
+    <lastmod>2023-08-22T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/projects/project-3-snake-water-gun-game/</loc>
+    <lastmod>2023-08-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/tags/development/</loc>
     <lastmod>2023-08-22T00:00:00+00:00</lastmod>
@@ -75,12 +81,6 @@
     <lastmod>2023-08-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/tags/gaming/</loc>
-    <lastmod>2023-08-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://giteshwagh.com/post/introduction-to-game-development/</loc>
-    <lastmod>2023-08-22T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://giteshwagh.com/projects/project-3-snake-water-gun-game/</loc>
     <lastmod>2023-08-22T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/projects/project-2-secure-profile-management-system/</loc>
@@ -98,7 +98,13 @@
     <loc>https://giteshwagh.com/post/project-2-calculator-in-python-tutorial-8/</loc>
     <lastmod>2023-08-14T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://giteshwagh.com/tags/match-cases/</loc>
+    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://giteshwagh.com/post/match-cases-in-python-tutorial-7/</loc>
+    <lastmod>2023-07-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/tags/match-cases-in-python/</loc>
     <lastmod>2023-07-06T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/post/if-else-statements-in-python-tutorial-6/</loc>
@@ -152,13 +158,25 @@
     <loc>https://giteshwagh.com/post/introduction-to-c-sharp-tutorial-1/</loc>
     <lastmod>2022-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://giteshwagh.com/tags/free_video_editor/</loc>
+    <loc>https://giteshwagh.com/tags/free-video-editor/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/tags/is-kdenlive-a-good-editing-software/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/tags/is-kdenlive-better-than-premiere-pro/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/tags/is-there-a-paid-version-of-kdenlive/</loc>
     <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/tags/kdenlive/</loc>
     <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://giteshwagh.com/tags/video_editing/</loc>
+    <loc>https://giteshwagh.com/tags/video-editing/</loc>
+    <lastmod>2022-02-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://giteshwagh.com/tags/what-is-the-no-1-video-editing-app/</loc>
     <lastmod>2022-02-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://giteshwagh.com/post/why-kdenlive-is-the-best-free-video-editor/</loc>
