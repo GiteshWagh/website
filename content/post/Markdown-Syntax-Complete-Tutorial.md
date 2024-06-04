@@ -11,6 +11,7 @@ tags = [
   "MarkdownSyntax"
 ]
 toc = "true"
+featureimage="/images/Markdown Syntax Thumbnail.png"
 +++
 
 # Complete Tutorial Of Markdown Syntax
@@ -21,59 +22,42 @@ types of content on the web. In this tutorial, we'll cover the basic syntax
 of Markdown in simple words.
 
 
-
 ## 1. Headings 
-
 To create headings, use hash symbols (#). Use hash as per your heading level.
 
-```Markdown
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
- 
-##### Heading 5
-
-###### Heading 6
-```
-
-**Output-**
 
 <img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/Markdown Syntax.jpg">
 
-
+**************
+  
 ## 2. Text Formatting
 
-Bold Text:  Surround the text with double asterisks or double underscores.
+### Bold Text:  
+Surround the text with double asterisks or double underscores.
 
 ```Markdown
-Bold Text
-
-Bold Text
-
+**Bold Text**
+__Bold Text__    
 ```
 
-**Output -**  
+**Output:** 
+
 **Bold Text**
 __Bold Text__ 
 
-**Italic Text:** Surround the text with single asterisks or single 
-underscores.
+
+### Italic Text:
+Surround the text with single asterisks or single underscores.
 
 ```Markdown
 *Italic Text*
 _Italic Text_
-
 ```
 
-**Output -** 
+**Output:** 
 
-Italic Text 
-Italic Text 
-
+*Italic Text*
+_Italic Text_
 
 
 ## 3. Lists
@@ -86,7 +70,7 @@ Unordered Lists: Use asterisks, plus signs, or hyphens.
 - Item 3
 ```
 
-**Output -** 
+**Output:** 
 
 * Item 1
 + Item 2
@@ -103,11 +87,10 @@ List with ordered elements: Use numbers for numbering element of list.
 
 ```
 
-**Output -** 
+**Output:** 
 1. Item 1
 2. Item 2
 3. Item 3
-
 
 
 ## 4. Links
@@ -115,16 +98,12 @@ List with ordered elements: Use numbers for numbering element of list.
 Create links by enclosing the link text in square brackets and the URL in parentheses.
 
 ```Markdown
-
 [Gitesh Wagh](https://www.giteshwagh.com)
-
 ```
 
-
-Output - 
+**Output:** 
 
 [Gitesh Wagh](https://www.giteshwagh.com)
-
 
 
 ## 5. Images
@@ -138,16 +117,15 @@ Insert images similarly to links, but with an exclamation mark in front.
   **OR**
 
 ````Markdown
-<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/codes.jpg">
+<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/Image.png">
 ````
 
-Output - 
-![Alt Text For Image](codes.jpg)
+**Output:**  
 
+<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/MarkdownExamples.png">
 
-<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/codes.jpg">
-
-
+****************  
+  
 
 ## 6. Blockquotes
 
@@ -157,9 +135,8 @@ Use the greater-than symbol for blockquotes.
 > This is a blockquote.
 ```
 
-Output - 
+**Output:**
 > This is a blockquote.
-
 
 
 ## 7. Code
@@ -167,9 +144,7 @@ Output -
 Inline code is wrapped in backticks. 
 
 ```Markdown
-
 ```inline code``` 
-
 ```
 
 Output - 
@@ -189,14 +164,21 @@ print("Hello, Markdown!")
 ```
 
 
-
 ## 8. Horizontal Rules
 
 Insert a horizontal rule with three hyphens, underscores, or asterisks.
-
 ```Markdown
-
+---
 ```
+**OR**
+```
+***
+```
+**OR**
+```
+___
+```
+
 
 ## 9. Escaping Characters
 
@@ -206,9 +188,8 @@ To display special characters, use a backslash.
 \*Using Special Character\*
 ```
 
-Output - 
+**Output:** 
 \*Using Special Character\*
-
 
 
 ## 10. Tables
@@ -228,11 +209,11 @@ Output -
 | Content 1 | Content 2 |
 
 
+<img title="Markdown Synatx Example" alt="Markdown Synatx Example" src="/images/codes.jpg">
+
+****************  
+
 ## Recommended Content
 1. [Hugo : World's Fastest Framework For Website Building 🔥](https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/)
-
 2. [Why Kdenlive Is The Best Free Video Editor?](https://giteshwagh.com/post/why-kdenlive-is-the-best-free-video-editor/)
-
 3. [Why Coding Will Become The Most Valuable Skill In The Future?](https://giteshwagh.com/post/why-coding-will-become-the-most-valuable-skill-in-the-future/)
-
-

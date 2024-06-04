@@ -1,6 +1,6 @@
 +++
 authors = "Gitesh Wagh"
-title= "Introduction To C# Programming Language - C# Tutorials For Beginners #1"
+title= "Introduction To C#- Tutorials For Beginners #1"
 date="2022-03-05"
 Tags = [
     "VisualStudio",

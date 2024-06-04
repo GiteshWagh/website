@@ -5,7 +5,7 @@ categories = "Python"
 tags = [
   "Programming", 
   "Coding",
-  "python",
+  "Python",
   "PythonTutorial"
 ]
 description = ""
@@ -60,6 +60,11 @@ print(float_num)  # Output: 3.14
 ## Conclusion
 
 Typecasting is a fundamental concept in Python programming that allows you to work with different data types effectively. By understanding how to convert variables from one type to another, you can write more flexible and powerful code. Whether you're manipulating numbers, working with strings, or dealing with other data types, mastering typecasting will undoubtedly enhance your Python programming skills. So go ahead, experiment with typecasting, and unlock the full potential of Python!
+
+## Recommended Content
+1. [For Loops In Python- Python Tutorials For Beginners #9](https://giteshwagh.com/post/for-loops-in-python-tutorial-9/)  
+2. [Project 2: Calculator - Python Tutorials For Beginners #8](https://giteshwagh.com/post/project-2-calculator-in-python-tutorial-8/)  
+3. [Match Cases - Python Tutorials For Beginners #7](https://giteshwagh.com/post/match-cases-in-python-tutorial-7/)  
 
 ## Watch Video Tutorial
 {{< youtube GJ2NKlieaAA >}}

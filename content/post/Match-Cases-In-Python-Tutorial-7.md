@@ -112,11 +112,8 @@ match x:
 
 ## Recommended Content 
 1. [If-Else statements - Python Tutorials For Beginners #6](https://giteshwagh.com/post/if-else-statements-in-python-tutorial-6/)  
-
 2. [Variables And DataTypes - Python Tutorials For Beginners #3](https://giteshwagh.com/post/variables-and-datatypes-python-tutorial-3/)     
-
 3. [Installation and Setup of Python and VS Codium - Python Tutorials For Beginners #1](https://giteshwagh.com/post/setup-of-python-tutorial-1/)     
-
 
 
 ## Watch Video Tutorial On Youtube
