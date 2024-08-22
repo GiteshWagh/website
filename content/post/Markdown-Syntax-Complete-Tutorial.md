@@ -12,6 +12,7 @@ tags = [
 ]
 toc = "true"
 featureimage="/images/Markdown Syntax Thumbnail.png"
+featureImageAlt = "Markdown Syntax - Complete Tutorial"
 +++
 
 # Complete Tutorial Of Markdown Syntax

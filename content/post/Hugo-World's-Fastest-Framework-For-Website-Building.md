@@ -9,22 +9,22 @@ tags = [
     "gohugo",
     "Web Development"
 ]
-featureImage = "/images/Hugo.png"
-thumbnail = "/images/Hugo.png"
+featureImage = "/images/Hugo Tutorial.png"
+featureImageAlt = "Hugo : World's Fastest Framework For Website Building"
+thumbnail = "/images/Hugo Tutorial.png"
 toc = true
 +++
-
-Hey Guys👋,                                                                            
-
-Let's Learn Everything About Hugo: The World's fastest Framework For Website Development.
-
-
+  
+Hey Guys👋,  
+Let's Learn Everything About Hugo: The World's fastest Framework For Website Development.  
+  
 ## What Is Hugo?                                                                      
-
-Hugo is the world's fastest framework for website building. Hugo is a fast and modern static site generator. Hugo is based on the Go programming language. It supports multiple **free hosting** platforms like **Github, Gitlab, Netlify, etc.** Hugo provides us with various templates for web designing at zero cost. Hugo is one of the popular frameworks for building a website in a few minutes. Hugo uses **Go, HTML, CSS, etc.** for its rich content.
-
-# Hugo Features
-
+  
+Hugo is the world's fastest framework for website building. Hugo is a fast and modern static site generator. Hugo is based on the Go programming language. It supports multiple **Free Hosting** platforms like **Github, Gitlab, Netlify, Etc...**   
+Hugo provides us with various 700+ templates for web designing at zero cost. Hugo is one of the popular frameworks for building a website in a few minutes. Hugo uses **Go, HTML, CSS, etc.** for its rich features.  
+  
+## Hugo Features
+  
 * Zero cost for building a website.  
 * Free hosting.  
 * Fast speed( At **<1ms** per page ).    
@@ -35,88 +35,88 @@ Hugo is the world's fastest framework for website building. Hugo is a fast and m
 * Support **Go, HTML, CSS, etc.** programming languages for new features.  
 * Support **Github, Gitlab, Netlify, etc.**  
 * Amamzing content management.  
-
+  
 ## How To Download Hugo?
-
+  
 For downloading Hugo go to **[gohugo.io.](https://gohugo.io/installation/)** Which is the official website of Hugo. We use various methods For downloading Hugo.
-
+  
 Use Following Commands As Per Your Operating System For Downloading Hugo.
-
-### 1. Windows
-
-1. Chocolatey  
-
+  
+### 1. Windows  
+  
+#### 1. Chocolatey  
+  
 Chocolatey is a free and open-source package manager for Windows. This will install the extended edition of Hugo:
-
+  
 ```
 choco install hugo-extended
-```
-
-2. Scoop  
-
+``` 
+  
+#### 2. Scoop  
+  
 Scoop is a free and open-source package manager for Windows. This will install the extended edition of Hugo:
-
+   
 ```
 scoop install hugo-extended
 ```
-
-3. Winget  
-
+  
+#### 3. Winget  
+   
 Winget is Microsoft’s official free and open-source package manager for Windows. This will install the extended edition of Hugo:
-
+  
 ```
 winget install Hugo.Hugo.Extended
 ```
-
-4. Docker  
-
+  
+#### 4. Docker  
+  
 Erlend Klakegg Bergheim graciously maintains Docker images based on images for Alpine Linux, Busybox, Debian, and Ubuntu.
-
+  
 ```
 docker pull klakegg/hugo
 ```
-
+  
 ### 2. Linux                                                                      
-
-1. Snap                                                                              
-
+  
+#### 1. Snap                                                                                
+  
 Snap is a free and open-source package manager for Linux. Available for most distributions, snap packages are simple to install and are automatically updated.
-
+   
 The Hugo snap package is strictly confined. Strictly confined snaps run in complete isolation, up to a minimal access level that’s deemed always safe. The sites you create and build must be located within your home directory, or on removable media.
-
+  
 This will install the extended edition of Hugo:
-
+  
 ```
 sudo snap install hugo
 ```
-
+  
 To enable or revoke access to removable media:
-
+  
 ```
 sudo snap connect hugo:removable-media
 sudo snap disconnect hugo:removable-media
 ```
-
+  
 To enable or revoke access to SSH keys:
-
+   
 ```
 sudo snap connect hugo:ssh-keys
 sudo snap disconnect hugo:ssh-keys
 ```
-
-2. Homebrew    
-
+  
+#### 2. Homebrew    
+  
 Homebrew is a free and open-source package manager for **macOS and Linux.** This will install the extended edition of Hugo:
-
+  
 ```
 brew install hugo
 ```
-
+  
 Repository packages  
-
+  
 Most Linux distributions maintain a repository for commonly installed applications. Please note that these repositories may not contain the latest release.
-
-3. Arch Linux  
+  
+#### 3. Arch Linux  
 
 Derivatives of the Arch Linux distribution of Linux include EndeavourOS, Garuda Linux, Manjaro, and others. This will install the extended edition of Hugo:
 
@@ -124,7 +124,7 @@ Derivatives of the Arch Linux distribution of Linux include EndeavourOS, Garuda 
 sudo pacman -S hugo
 ```
 
-4. Debian  
+#### 4. Debian  
 
 Derivatives of the Debian distribution of Linux include elementary OS, KDE neon, Linux Lite, Linux Mint, MX Linux, Pop!_OS, Ubuntu, Zorin OS, and others. This will install the extended edition of Hugo:
 
@@ -134,7 +134,7 @@ sudo apt install hugo
 
 You can also download Debian packages from the latest release page.
 
-5. Fedora  
+#### 5. Fedora  
 
 Derivatives of the Fedora distribution of Linux include CentOS, Red Hat Enterprise Linux, and others. This will install the extended edition of Hugo:
 
@@ -142,7 +142,7 @@ Derivatives of the Fedora distribution of Linux include CentOS, Red Hat Enterpri
 sudo dnf install hugo
 ```
 
-6. openSUSE  
+#### 6. openSUSE  
 
 Derivatives of the openSUSE distribution of Linux include GeckoLinux, Linux Karmada, and others. This will install the extended edition of Hugo:
 
@@ -150,7 +150,7 @@ Derivatives of the openSUSE distribution of Linux include GeckoLinux, Linux Karm
 sudo zypper install hugo
 ```
 
-7. Solus  
+#### 7. Solus  
 
 The Solus distribution of Linux includes Hugo in its package repository. This will install the standard edition of Hugo:
 
@@ -158,7 +158,7 @@ The Solus distribution of Linux includes Hugo in its package repository. This wi
 sudo eopkg install hugo
 ```
 
-8. Docker  
+#### 8. Docker  
 
 Erlend Klakegg Bergheim graciously maintains Docker images based on images for Alpine Linux, Busybox, Debian, and Ubuntu.
 
@@ -168,7 +168,7 @@ docker pull klakegg/hugo
 
 ### 3. MacOS
 
-1. Homebrew  
+#### 1. Homebrew  
 
 Homebrew is a free and open-source package manager for macOS and Linux. This will install the extended edition of Hugo:
 
@@ -176,7 +176,7 @@ Homebrew is a free and open-source package manager for macOS and Linux. This wil
 brew install hugo
 ```
 
-2. MacPorts  
+#### 2. MacPorts  
 
 MacPorts is a free and open-source package manager for macOS. This will install the extended edition of Hugo:
 
@@ -184,7 +184,7 @@ MacPorts is a free and open-source package manager for macOS. This will install 
 sudo port install hugo
 ```
 
-3. Docker  
+#### 4. Docker  
 
 Erlend Klakegg Bergheim graciously maintains Docker images based on images for Alpine Linux, Busybox, Debian, and Ubuntu.
 
@@ -296,4 +296,9 @@ The static directory is one of the important directory of the site and contains 
 
 The directory theme contains **[themes](https://themes.gohugo.io/)** of the site.
 
-> **Source - https://gohugo.io/documentation/**
+Source - https://gohugo.io/documentation/
+
+## Recommended Content
+1. [Hugo : World's Fastest Framework For Website Building 🔥](https://giteshwagh.com/post/hugo-worlds-fastest-framework-for-website-building/)  
+2. [Why Kdenlive Is The Best Free Video Editor?](https://giteshwagh.com/post/why-kdenlive-is-the-best-free-video-editor/)  
+3. [Why Coding Will Become The Most Valuable Skill In The Future?](https://giteshwagh.com/post/why-coding-will-become-the-most-valuable-skill-in-the-future/)  

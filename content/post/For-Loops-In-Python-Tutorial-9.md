@@ -1,6 +1,6 @@
 +++
 authors= "Gitesh Wagh"
-title = " For Loops In Python- Python Tutorials For Beginners #9"
+title = "For Loops In Python- Python Tutorials For Beginners #9"
 date = "2023-10-02"
 categories = "Python"
 tags = [
@@ -12,6 +12,7 @@ tags = [
 thumbnail = "/images/PythonTutorial9.png"
 feautureimage="/images/PythonTutorial9.png"
 toc=true
+featureImageAlt = "For Loops In Python- Python Tutorials For Beginners #9"
 +++
 
 ## Understanding For Loops In Python
@@ -219,3 +220,11 @@ Blue
 
 ## Watch Video Tutorial 
 {{< youtube nuOv1dM6URI >}}
+
+## Recommended Content
+  
+1. [Variables And DataTypes - Python Tutorials For Beginners #3](https://giteshwagh.com/post/variables-and-datatypes-python-tutorial-3/)
+2. [Operators In Python - Python Tutorials For Beginners #5](https://giteshwagh.com/post/operators-in-python-tutorial-5/)
+3. [Type Casting In Python- Python Tutorials For Beginners #10](https://giteshwagh.com/post/type-casting-in-python-tutorial-10/)
+  
+  
